@@ -1,0 +1,133 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the articles page.
+// -----------------------------------------------------------------------------
+
+.page-articles {
+  background: mix(white, $color__manatee, 90%) url(../img/bg.jpg) no-repeat left -325px top -560px;
+
+  @include mq__min-desktop {
+    background-position: center -492px;
+  }
+
+  @media screen and (min-width:1670px) {
+    background-position: center -32vw;
+    background-size: 100% auto;
+  }
+
+  .hero {
+    margin-bottom: 70px;
+  
+    > .container {
+      max-width: 1088 + 40 * 1px;
+      padding: 100px 20px 0;
+      margin: 0 auto;
+    }
+  
+    @include mq__min-desktop {
+      font-size: 20px;
+    }
+  }
+  
+  .hero-content {
+    max-width: 720px;
+  }
+}
+
+.articles-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 130px;
+
+  .container {
+    max-width: 1088 + 44 * 1px;
+    margin: 0 auto;
+    padding: 0 22px;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    margin: 0 -22px 100px;
+  }
+
+  .col {
+    display: flex;
+    align-items: stretch;
+    padding: 0 22px;
+
+    @include mq__min-tablet {
+      width: 50%;
+    }
+
+    @include mq__min-desktop {
+      width: 33.33%;
+    }
+  }
+
+  .article {
+    margin-bottom: 48px;
+  }
+}
+
+.category-select-form {
+  margin-bottom: 50px;
+}
+
+.category-select {
+  width: 100%;
+  padding: 9px 18px;
+  border: 2px solid rgba($color__manatee,0.35);
+  border-radius: 4px;
+  font-weight: 700;
+  line-height: 1;
+  color: $color__stratos;
+  background: rgba(255,255,255,0.35);
+
+  @include mq__min-tablet {
+    width: 333px;
+  }
+}
+
+.article-headline {
+  margin: 0;
+  font-size: 24px;
+
+  .card > a:hover & {
+    color: $color__bahama-blue;
+  }
+}
+
+.article-category {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: $color__manatee;
+}
+
+.pagination {
+  font-weight: 900;
+  text-decoration: none;
+  text-align: center;
+
+  > .current,
+  > a {
+    display: inline-block;
+    padding: 8px 0;
+    text-align: center;
+    min-width: 40px;
+
+    @include mq__min-desktop {
+      min-width: 0;
+
+      &::after {
+        content: ','
+      }
+
+      &:last-child::after {
+        content: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the main section of the site/application.
+// -----------------------------------------------------------------------------
+
+main {
+  min-height: calc(100vh - 68px - 445px);
+
+  @include mq__min-desktop {
+    min-height: calc(100vh - 147px - 228px);
+  }
+}

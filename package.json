@@ -1,0 +1,10 @@
+{
+  "name": "berry-global-color-scents-redesign",
+  "devDependencies": {
+    "node-sass": "^4.14.1"
+  },
+  "scripts": {
+    "watch": "node-sass assets/scss/ -o assets/css/ --source-map true --output-style compressed -w",
+    "compile:css": "node-sass assets/scss/ -o assets/css/ --source-map true --output-style compressed"
+  }
+}

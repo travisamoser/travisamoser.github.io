@@ -1,0 +1,57 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+.btn {
+  display: inline-block;
+  min-width: 170px;
+  padding: 12px 40px 11px;
+  border: 0 none;
+  border-radius: 23px;
+  font-size: 16px;
+  font-weight: 900;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background: $color__royal-blue;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.16);
+
+  &:hover {
+    text-decoration: none;
+    color: white;
+    background: $color__bahama-blue;
+  }
+
+  &.btn-small {
+    min-width: 125px;
+    padding: 4px 20px;
+    font-size: 12px;
+    text-transform: uppercase;
+    box-shadow: none;
+  }
+
+  &.btn-link {
+    min-width: auto;
+    padding: 12px 0 11px;
+    border-radius: 0;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-align: left;
+    color: $color__royal-blue;
+    background: none;
+    box-shadow: none;
+
+    &:hover {
+      color: $color__bahama-blue;
+      background: none;
+    }
+
+    svg {
+      position: relative;
+      bottom: 1px;
+      width: 12px;
+      height: 8px;
+      fill: currentColor;
+    }
+  }
+}

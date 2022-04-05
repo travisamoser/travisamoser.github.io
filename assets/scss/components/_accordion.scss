@@ -1,0 +1,75 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the accordion component.
+// -----------------------------------------------------------------------------
+
+.accordion-wrapper {
+
+  > .container {
+    max-width: 904 + 40 * 1px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+}
+
+.accordion-item {
+  border: 2px solid rgba($color__manatee, 0.3);
+  border-radius: 4px;
+  margin-bottom: 15px;
+  background: white;
+}
+
+.accordion-header {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.accordion-button {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 20px 72px 20px 27px;
+  border: 0 none;
+  text-align: left;
+  background: none;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    right: 27px;
+    top: 0;
+    bottom: 0;
+    display: block;
+    width: 18px;
+    height: 2px;
+    border-radius: 1px;
+    margin: auto 0;
+    background: $color__royal-blue; 
+    transform-origin: center;
+  }
+
+  &::after {
+    transform: rotate(90deg);
+  }
+
+  @at-root {
+
+    .accordion-item:not(.collapsed) &::after {
+      opacity: 0;
+    }
+  }
+
+  @include mq__min-desktop {
+    padding-right: 120px;
+  }
+}
+
+.accordion-collapse {
+  padding: 0 72px 40px 27px;
+
+  @include mq__min-desktop {
+    padding-right: 120px;
+  }
+}

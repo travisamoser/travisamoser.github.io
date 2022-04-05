@@ -1,0 +1,14 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the body of the site/application.
+// -----------------------------------------------------------------------------
+
+body {
+
+  @include mq__max-tablet {
+    padding-top: #{$mobile-header-height};
+  }
+
+  @include mq__min-desktop {
+    padding-top: #{$desktop-sticky-header-height};
+  }
+}

@@ -1,0 +1,73 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+
+// sizes
+$phone-width-max: 767.98px;
+$tablet-width-min: 768px;
+$tablet-width-max: 959.98px;
+$desktop-width-min: 960px;
+
+
+// colors
+// https://chir.ag/projects/name-that-color/
+
+// general
+$color__stratos: #00194a; // a bit darker than logo blue
+$color__royal-blue: #2b7de1;
+$color__bahama-blue: #0065a1;
+$color__manatee: #9397a9;
+$color__mine-shaft: #3b3b3b;
+$color__dove-gray: #707070;
+
+// brand colors
+$color__logo-blue: #00235b;
+
+// scents
+$color__lavender: #87189d;
+$color__lavender_bag: #9397aa;
+
+$color__ocean-mist: #0067a0;
+$color__ocean-mist_bag: #8baebb;
+
+$color__vanilla: #ffc600;
+$color__vanilla_bag: #f2e1b0;
+
+$color__simply-clean: #9adbe8;
+$color__simply-clean_bag: #969a9d;
+
+$color__lavender-sage: #87189d;
+$color__lavender-sage_bag: #a692ba;
+
+$color__fresh-air: #307fe2;
+$color__fresh-air_bag: #93b8d9;
+
+$color__orange: #ff671f;
+$color__orange_bag: #f2e1b0;
+
+$color__lemon: #fae053;
+$color__lemon_bag: #f4df5b;
+
+$color__citrus-sandalwood: #97d700;
+$color__citrus-sandalwood_bag: #8baebb;
+
+$color__teakwood-rose: #f65275;
+$color__teakwood-rose_bag: #d19c97;
+
+
+// logo
+$color__logo: $color__logo-blue;
+
+// text
+$color__text: $color__mine-shaft;
+
+// fonts
+// https://www.cssfontstack.com/
+
+$font__nunito-sans: 'Nunito Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif; 
+
+// layout
+$mobile-header-height: 68px;
+$desktop-header-height: 147px;
+$desktop-sticky-header-height: 67px;

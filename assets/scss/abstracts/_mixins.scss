@@ -1,0 +1,27 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+@mixin mq__max-phone {
+  @media screen and (max-width: #{$phone-width-max}) {
+    @content;
+  }
+}
+
+@mixin mq__min-tablet {
+  @media screen and (min-width: #{$tablet-width-min}) {
+    @content;
+  }
+}
+
+@mixin mq__max-tablet {
+  @media screen and (max-width: #{$tablet-width-max}) {
+    @content;
+  }
+}
+
+@mixin mq__min-desktop {
+  @media screen and (min-width: #{$desktop-width-min}) {
+    @content;
+  }
+}

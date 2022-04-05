@@ -1,0 +1,151 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles for the related glider sections.
+// -----------------------------------------------------------------------------
+
+.related-products,
+.featured-articles {
+
+  > .container {
+    margin: 0 auto;
+
+    > h2 {
+      margin: 0 0 50px;
+      text-align: center;
+    }
+    
+    @include mq__min-desktop {
+      padding-bottom: 120px;
+    }
+  }
+
+  .row {
+    display: flex;
+    margin-bottom: 16px;
+  }
+
+  .col {
+    margin-bottom: 36px;
+  }
+}
+
+.related-products {
+  background: rgba($color__manatee,0.1) url(../img/related-products/bg.svg) top 30px center / 200px auto repeat;
+
+  > .container {
+    padding-top: 70px;
+    padding-bottom: 40px;
+
+    @include mq__min-desktop {
+      max-width: 1088 + 72 * 1px;
+      padding: 70px 36px 50px;
+    }
+
+    .col {
+      padding: 0 30px;
+    }
+  }
+}
+
+.featured-articles {
+
+  > .container {
+    margin-bottom: 100px;
+
+    @include mq__min-desktop {
+      max-width: 1088 + 50 * 1px;
+      padding: 70px 25px 50px;
+
+      .row {
+        margin-bottom: 50px;
+      }
+    }
+
+    .col {
+      padding: 0 25px;
+    }
+  }
+}
+
+.related-product {
+  height: 100%;
+  text-align: center;
+
+  a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 35px 35px;
+    border-radius: 8px;
+
+    // temp
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+
+    @include mq__max-tablet {
+      text-decoration: none;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.08);
+    }
+
+    @include mq__min-desktop {
+
+      &:hover,
+      &:active {
+        text-decoration: none;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0,0,0,0.08);
+  
+        h3 {
+          color: $color__royal-blue;
+        }
+      }
+    }
+  }
+
+  img {
+    display: block;
+    max-height: 313px;
+    width: auto;
+    max-width: 100%;
+  }
+}
+
+.tns-nav {
+  margin-bottom: 50px;
+  text-align: center;
+
+  button {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 0 none;
+    border-radius: 0;
+    margin: 0 4px;
+    background: transparent;
+    appearance: none;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      display: block;
+      width: 100%;
+      height: 3px;
+      border-radius: 4px;
+      margin: auto 0;
+      background: rgba($color__manatee,0.28);
+    }
+
+    &.tns-nav-active::before {
+      background: $color__royal-blue;
+    }
+  }
+
+  @include mq__min-desktop {
+    display: none;
+  }
+}
