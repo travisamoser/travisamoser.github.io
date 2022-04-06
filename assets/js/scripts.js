@@ -39,7 +39,7 @@ document.getElementById('nav-toggle').addEventListener('click', function () {
 var header = document.getElementsByTagName('header')[0];
 
 function initStickyHeader() {
-  if (window.pageYOffset > 67) {
+  if (window.pageYOffset > 80) { /* 147 - 67 */
     header.classList.add('sticky');
   } else {
     header.classList.remove('sticky');
@@ -131,11 +131,11 @@ Array.prototype.forEach.call(formInputs, function(el, i){
 });
 
 //-----------------------------------------------------------------------------
-// Featured Articles Slider
-// Related Products Slider
+// Sliders
 //
 window.addEventListener('load', function(){
 
+  // Featured Articles Slider
   if (document.querySelector('.articles-slider')) {
     var articlesSlider = tns({
       container: '.articles-slider',
@@ -154,6 +154,7 @@ window.addEventListener('load', function(){
     });  
   }
 
+  // Related Products Slider
   if (document.querySelector('.products-slider')) {
     var articlesSlider = tns({
       container: '.products-slider',
@@ -169,6 +170,17 @@ window.addEventListener('load', function(){
           items: 3
         }
       }
+    });
+  }
+  
+  // Testimonials Slider
+  if (document.querySelector('.testimonials-slider')) {
+    var articlesSlider = tns({
+      container: '.testimonials-slider',
+      loop: false,
+      autoplay: true,
+      autoplayButtonOutput: false,
+      navPosition: 'bottom',
     });
   }
 });

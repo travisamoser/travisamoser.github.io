@@ -16,15 +16,20 @@
 
 @import "components/form";
 @import "components/button";
+@import "components/hero";
 @import "components/card";
-@import "components/related-glider";
+@import "components/related-slider";
+@import "components/testimonials";
 @import "components/accordion";
 
 @import "pages/home";
+@import "pages/about";
+@import "pages/sustainability";
 @import "pages/articles";
 @import "pages/article";
 @import "pages/faq";
 @import "pages/contact";
 
 @import "utilities/visibility";
+@import "utilities/layout";
 @import "utilities/typography";

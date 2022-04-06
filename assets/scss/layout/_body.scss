@@ -9,6 +9,6 @@ body {
   }
 
   @include mq__min-desktop {
-    padding-top: #{$desktop-sticky-header-height};
+    padding-top: #{$desktop-header-height};
   }
 }
