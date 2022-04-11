@@ -9,7 +9,7 @@
     background-position: right -300px center;
 
     @include mq__min-desktop {
-      background-position: center;
+      background-position: center top;
     }
   }
 }
@@ -18,16 +18,12 @@
   padding: 65px 0;
 
   > .container {
-    max-width: 1088px;
+    max-width: 1088 + 40 * 1px;
     margin: 0 auto;
     padding: 0 20px;
   }
 
   @include mq__min-desktop {
-
-    > .container {
-      padding: 0;
-    }
 
     .row {
       display: flex;
@@ -52,7 +48,7 @@
   padding: 60px 0;
 
   > .container {
-    max-width: 1088px;
+    max-width: 1088 + 40 * 1px;
     margin: 0 auto;
     padding: 0 20px;
   }
@@ -74,10 +70,6 @@
 
   @include mq__min-desktop {
     padding: 110px 0;
-
-    > .container {
-      padding: 0;
-    }
 
     > .container-narrow {
       margin-bottom: 2em;

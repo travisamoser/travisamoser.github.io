@@ -22,10 +22,6 @@
     display: flex;
     margin-bottom: 16px;
   }
-
-  .col {
-    margin-bottom: 36px;
-  }
 }
 
 .related-products {
@@ -46,17 +42,13 @@
 }
 
 .featured-articles {
+  padding: 70px 0 100px;
 
   > .container {
-    margin-bottom: 100px;
 
     @include mq__min-desktop {
-      max-width: 1088 + 50 * 1px;
-      padding: 70px 25px 50px;
-
-      .row {
-        margin-bottom: 50px;
-      }
+      max-width: 1088 + 40 * 1px;
+      padding: 0 20px;
     }
 
     .col {

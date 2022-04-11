@@ -8,13 +8,15 @@
   padding: 12px 40px 11px;
   border: 0 none;
   border-radius: 23px;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 900;
   text-align: center;
   text-decoration: none;
+  text-transform: uppercase;
   color: white;
   background: $color__royal-blue;
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.16);
+  transition: all 0.3s ease-in-out;
 
   &:hover {
     text-decoration: none;
@@ -22,12 +24,28 @@
     background: $color__bahama-blue;
   }
 
+  &.btn-outline {
+    padding: 8px 36px 7px;
+    border: 2px solid $color__royal-blue;
+    color: $color__royal-blue;
+    background: white;    
+
+    &:hover {
+      color: white;
+      background: $color__royal-blue;      
+    }
+  }
+
   &.btn-small {
     min-width: 125px;
     padding: 4px 20px;
     font-size: 12px;
-    text-transform: uppercase;
     box-shadow: none;
+
+    &.btn-outline {
+      padding: 2px 18px;
+      border-width: 1px;
+    }
   }
 
   &.btn-link {
@@ -40,11 +58,7 @@
     color: $color__royal-blue;
     background: none;
     box-shadow: none;
-
-    &:hover {
-      color: $color__bahama-blue;
-      background: none;
-    }
+    transition: color 0.3s ease-in-out;
 
     svg {
       position: relative;
@@ -52,6 +66,16 @@
       width: 12px;
       height: 8px;
       fill: currentColor;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &:hover {
+      color: $color__bahama-blue;
+      background: none;
+
+      svg {
+        transform: translateX(5px);
+      }
     }
   }
 }

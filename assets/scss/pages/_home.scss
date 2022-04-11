@@ -1,3 +1,240 @@
 // -----------------------------------------------------------------------------
 // This file contains styles that are specific to the home page.
 // -----------------------------------------------------------------------------
+
+.hero-banner {
+
+  .hero {
+    width: 100%;
+    padding-top: 320px;
+    font-size: 16px;
+    background-repeat: no-repeat;
+    background-size: auto 230px;
+    background-position: center top;
+
+    > .container {
+      position: relative;
+      max-width: 1088 + 40 * 1px;
+      padding: 0 20px;
+      margin: 0 auto;
+    }
+
+    .copy {
+      max-width: 493px;
+    }
+
+    h2 {
+      margin: 0 0 0.5em;
+      font-size: 16px;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0 0 0.5em;
+      font-size: 36px;
+      font-weight: 300;
+    }
+
+    .links {
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+
+    .image {
+      position: absolute;
+      right: 0;
+      left: 0;
+      top: -280px;
+      max-width: 259px;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    @include mq__min-tablet {
+      background-size: 100% auto;
+
+      .image {
+        top: -320px;
+        max-width: 312px;
+      }
+    }
+    
+    @include mq__min-desktop {
+      height: 684px;
+      padding: 0;
+      background-size: auto 549px;
+      background-position: left top;
+      font-size: 20px;
+
+      > .container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        height: 549px;
+      }
+
+      h2 {
+        font-size: 18px;
+      }
+  
+      h1 {
+        font-size: 54px;
+      }
+
+      .image {
+        top: auto;
+        left: auto;
+        right: 0;
+        bottom: -120px;
+        max-width: 474px;
+        margin: 0;
+      }
+    }
+
+    @media screen and (min-width:1128px) {
+      .image {
+        right: auto;
+        left: 630px;
+      }
+    }
+
+    @media screen and (min-width:1366px) {
+      background-position: right top;
+    }
+  }
+
+  .hero-lavender-sage {
+    background-image: url(../img/home/bg_hero-lavender-sage.jpg);
+
+    h2 {
+      color: $color__lavender;
+    }
+
+    .btn-link {
+      color: $color__lavender;
+
+      &:hover {
+        color: $color__bahama-blue;
+      }
+    }
+  }
+
+  .hero-ocean-mist {
+    background-image: url(../img/home/bg_hero-lavender-sage.jpg);
+
+    h2 {
+      color: $color__ocean-mist__text;
+    }
+
+    .btn-link {
+      color: $color__ocean-mist__text;
+
+      &:hover {
+        color: $color__bahama-blue;
+      }
+    }
+  }
+
+  .hero-vanilla-flower {
+    background-image: url(../img/home/bg_hero-lavender-sage.jpg);
+
+    h2 {
+      color: $color__vanilla__text;
+    }
+
+    .btn-link {
+      color: $color__vanilla__text;
+
+      &:hover {
+        color: $color__bahama-blue;
+      }
+    }
+  }
+
+  .tns-nav {
+    display: block;
+    margin-top: 60px;
+
+    @include mq__min-desktop {
+      margin-top: -100px;
+    }
+  }
+}
+
+.product-touts {
+  padding: 30px 0 65px;
+  text-align: center;
+  
+  > .container {
+    max-width: 1088 + 40 * 1px;
+    padding: 0 20px;
+    margin: 0 auto;
+
+    > h2 {
+      margin-bottom: 1em;
+    }
+  }
+
+  @include mq__min-desktop {
+
+    .row {
+      display: flex;
+      margin: 0 8px;
+  
+      .col {
+        padding: 0 8px;
+      }
+    }
+  }
+}
+
+.video-section {
+  padding: 65px 0 100px;
+
+  > .container {
+    max-width: 1088 + 40 * 1px;
+    padding: 0 20px;
+    margin: 0 auto;
+
+    > h2 {
+      margin-bottom: 1em;
+      text-align: center;
+
+      @include mq__min-desktop {
+        margin-bottom: 2em;
+      }
+    }
+  }
+}
+
+.sustainability-section {
+  padding: 460px 0 75px;
+  background: url(../img/home/bg-sustainability.svg) no-repeat center top;
+
+  > .container {
+    max-width: 1088 + 40 * 1px;
+    padding: 0 20px;
+    margin: 0 auto;
+  }
+
+  @include mq__min-desktop {
+    padding: 250px 0;
+    background-position: left -220px center;
+
+    > .container {
+      padding: 0 20px 0 530px;
+
+      > h2 {
+        margin-top: 0;
+      }
+    }
+  }
+
+  @media screen and (min-width:1128px) {
+    background-position: left calc(((100vw - 1128px) / 2) - 220px) center;
+  }
+}

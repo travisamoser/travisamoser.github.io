@@ -29,9 +29,11 @@ $color__lavender: #87189d;
 $color__lavender_bag: #9397aa;
 
 $color__ocean-mist: #0067a0;
+$color__ocean-mist__text: mix(black, $color__ocean-mist, 10%);
 $color__ocean-mist_bag: #8baebb;
 
 $color__vanilla: #ffc600;
+$color__vanilla__text: mix(black, $color__vanilla, 60%);
 $color__vanilla_bag: #f2e1b0;
 
 $color__simply-clean: #9adbe8;

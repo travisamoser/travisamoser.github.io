@@ -1,0 +1,81 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the product tout component.
+// -----------------------------------------------------------------------------
+
+.product-tout {
+  width: 260px;
+  height: 260px;
+  margin: 0 auto 26px;
+  border-radius: 8px;
+
+  > a {
+    position: relative;
+    display: block;
+    height: 100%;
+    overflow: hidden;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
+    }
+
+    &:hover .bg {
+      transform: scale(110%);
+    }
+  }
+
+  .bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .icon {
+    position: absolute;
+    top: 67px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    margin: 0 auto;
+  }
+
+  h3 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 184px;
+    z-index: 1;
+    margin: 0 auto;
+    font-size: 14px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: white;
+  }
+}
+      
+.purple-tout > a::after {
+  background: rgba($color__lavender, 0.73);
+}
+      
+.green-tout > a::after {
+  background: rgba($color__citrus-sandalwood, 0.71);
+}
+      
+.blue-tout > a::after {
+  background: rgba($color__ocean-mist, 0.71);
+}
+      
+.orange-tout > a::after {
+  background: rgba($color__orange, 0.76);
+}
