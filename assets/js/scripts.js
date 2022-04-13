@@ -222,6 +222,19 @@ Array.prototype.forEach.call(formInputs, function(el, i){
   });
 });
 
+
+//-----------------------------------------------------------------------------
+// Scent Selector
+//
+if (document.getElementById('scent')) {
+  var scentSelect = document.getElementById('scent');
+
+  document.body.setAttribute('data-scent', scentSelect.value);
+
+  scentSelect.addEventListener('change', function (e) {
+    document.body.setAttribute('data-scent', e.target.value);
+  });
+}
 //-----------------------------------------------------------------------------
 // Sliders
 //

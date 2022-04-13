@@ -2,444 +2,66 @@
 // This file contains styles that are specific to the product pages.
 // -----------------------------------------------------------------------------
 
+
+:root {
+  --scent-color: #{$color__mine-shaft};
+  --bag-color: #{$color__manatee};
+}
+
+
 .page-products {
 
-  .scent-selector {
-    padding: 0 0 65px;
-
-    .product-gallery {
-      
-      img {
-        max-width: 100%;
-        height: auto;
-      }
-
-      .bag-color {
-        position: relative;
-        width: 100%;
-        height: 100vw;
-        font-weight: 900;
-        text-align: center;
-        text-transform: uppercase;
-        color: white;
-        background-color: $color__dove-gray;
-
-        > span {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-        }
-      }
-    }
-
-    .product-gallery-thumbs {
-      display: none;
-    }
-
-    .copy {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 0 20px;
-    }
-
-    h1 {
-      font-size: 24px;
-      font-weight: 600;
-    }
-
-    form {
-      width: 100%;
-      margin-bottom: 30px;
-    }
-
-    label {
-      display: block;
-      width: 100%;
-      margin-bottom: 0.5em;
-      font-size: 14px;
-      font-weight: 600;
-      color: $color__manatee;
-    }
-
-    select {
-      display: block;
-      width: 100%;
-      padding: 8px 28px 8px 18px;
-      border: 2px solid rgba($color__manatee, 0.35);
-      border-radius: 4px;
-      background:rgba($color__manatee, 0.05);
-    }
-
-    .scent-features {
-      margin: 20px 0 26px;
-      color: $color__stratos;
-    }
-
-    .scent-feature {
-      display: flex;
-      margin-bottom: 14px;
-
-      img {
-        display: block;
-        margin-right: 17px;
-      }
-    }
-
-    @include mq__min-desktop {
-      display: flex;
-      justify-content: space-between;
-      max-width: 1088 + 40 * 1px;
-      padding: 80px 20px 65px;
-      margin: 0 auto;
-
-      .product-gallery {
-        position: relative;
-        flex: 0 0 560 / 1088 * 100%;
-        padding-left: 110px;
-
-        .product-gallery-slider {
-
-          .bag-color {
-            width: 100%;
-            height: 0;
-            min-height: 356px;
-            max-height: 450px;
-          }
-        }
-      }
-
-      .product-gallery-thumbs {
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: block;
-        width: 76px;
-
-        > * {
-          width: 76px;
-          height: 76px;
-          margin-bottom: 25px;
-          border: 2px solid rgba($color__manatee, 0.35);
-          border-radius: 2px;
-          cursor: pointer;
-
-          &.tns-nav-active {
-            border-color: $color__royal-blue;
-          }
-        }
-
-        .bag-color {
-          width: 76px;
-          height: 76px;
-          font-size: 10px;
-        }
-      }
-
-      .copy {
-        flex: 0 0 495 / 1088 * 100%;
-        display: block;
-        padding: 0;
-      }
-
-      h1 {
-        margin-top: 0;
-        font-size: 36px;
-      }
-
-      select {
-        width: auto;
-      }
-
-      .scent-features {
-        display: flex;
-      }
-
-      .scent-feature + .scent-feature {
-        margin-left: 40px;
-      }
-    }
-
-    @media screen and (min-width:1024px) {
-
-      .product-gallery {
-
-        .product-gallery-slider {
-
-          .bag-color {
-            height: 389px;
-          }
-        }
-      }
-    }
-
-    @media screen and (min-width:1128px) {
-
-      .product-gallery {
-
-        .product-gallery-slider {
-
-          .bag-color {
-            height: 450px;
-          }
-        }
-      }
-    }
+  &[data-scent="lavender"] {
+    --scent-color: #{$color__lavender_text};
+    --bag-color: #{$color__lavender_bag};
   }
 
-  .tns-nav {
-    margin-bottom: 0;
-    margin-top: 10px;
+  &[data-scent="ocean-mist"] {
+    --scent-color: #{$color__ocean-mist_text};
+    --bag-color: #{$color__ocean-mist_bag};
   }
 
-  .product-features {
-    position: relative;
-    padding: 65px 0 40px;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: -190px;
-      left: 0;
-      right: 0;
-      z-index: -1;
-      display:  block;
-      width: 100%;
-      height: 435px;
-      background-position: top right -305px;
-      background-size: auto 100%;
-      background-repeat: no-repeat;
-      background-image: url(/assets/img/products/13-gallon-tall/bg_lavender-sage.jpg);
-    }
-
-    > .container {
-      max-width: 1088 + 40 * 1px;
-      padding: 0 20px;
-      margin: 0 auto;
-    }
+  &[data-scent="vanilla-flower"] {
+    --scent-color: #{$color__vanilla-flower_text};
+    --bag-color: #{$color__vanilla-flower_bag};
   }
 
-  .product-feature {
-    position: relative;
-    overflow: hidden;
-    padding: 50px 30px;
-    border: 1px solid rgba($color__dove-gray, 0.04);
-    border-radius: 8px;
-    margin-bottom: 20px;
-    text-align: center;
-    background-color: rgba($color__manatee, 0.85);
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: -190 + -65 * 1px;
-      left: 0;
-      right: 0;
-      z-index: -1;
-      display:  block;
-      width: 100%;
-      height: 435px;
-      background-position: top right -305 + -21 * 1px;
-      background-size: auto 100%;
-      background-repeat: no-repeat;
-      background-image: url(/assets/img/products/13-gallon-tall/bg_lavender-sage.jpg);
-      filter: blur(10px) brightness(1.7) opacity(.85);
-    }
-
-    > svg {
-      display: block;
-      width: 104px;
-      height: auto;
-      margin: 0 auto;
-    }
+  &[data-scent="simply-clean"] {
+    --scent-color: #{$color__simply-clean_text};
+    --bag-color: #{$color__simply-clean_bag};
   }
-
-  .col:nth-child(2) .product-feature,
-  .col:nth-child(3) .product-feature {
-
-    &::before {
-      content: none;
-    }
-  }
-
-  @include mq__min-desktop {
-
-    .product-features {
-
-      &::before {
-        top: -430px;
-        height: 947.5px;
-        background-position: top right -660px;
-      }
-    
-      .row {
-        display: flex;
-        align-items: stretch;
-        margin: 0 -8px;
-      }
-
-      .col {
-        flex: 0 0 33.33%;
-        padding: 0 8px;
-      }
-    }
-
-    .product-feature {
-      height: 100%;
-      overflow: hidden;
-    }
-
-    .col:nth-child(1) .product-feature,
-    .col:nth-child(2) .product-feature,
-    .col:nth-child(3) .product-feature {
-
-      &::before {
-        top: -430 + -65 * 1px;
-        left: auto;
-        right: calc(-66.66vw + -660px + 4px);
-        width: 1694px;
-        height: 947.5px;
-        background-position: top right;
-      }
-    }
-
-    .col:nth-child(2) .product-feature {
   
-      &::before {
-        content: '';
-        right: calc(-33.33vw + -660px + 4px);
-      }
-    }
-
-    .col:nth-child(3) .product-feature {
-  
-      &::before {
-        content: '';
-        right: -660 + 4 * 1px;
-      }
-    }
+  &[data-scent="lavender-sage"] {
+    --scent-color: #{$color__lavender-sage_text};
+    --bag-color: #{$color__lavender-sage_bag};
   }
 
-  @media screen and (min-width:1128px) {}
-
-  &[data-color="lavender-sage"] {
-
-    .product-feature {
-      border-color: rgba($color__lavender-sage, 0.06);
-      background-color: rgba($color__lavender-sage, 0.05);
-  
-      > svg path {
-        fill: $color__lavender-sage;
-      }
-    }
-    
-    .scent-selector {
-
-      select {
-        color: $color__lavender-sage;
-      }
-  
-      .product-gallery {
-  
-        .bag-color {
-          background-color: $color__lavender-sage_bag;
-        }
-      }
-    }
-
-    .tns-nav {
-    
-      button {
-    
-        &.tns-nav-active::before {
-          background: $color__lavender-sage;
-        }
-      }
-    }
+  &[data-scent="fresh-air"] {
+    --scent-color: #{$color__fresh-air_text};
+    --bag-color: #{$color__fresh-air_bag};
   }
 
-  .product-details {
-    padding: 0 0 50px;
-
-    > .container {
-      max-width: 1088 + 40 * 1px;
-      padding: 0 20px;
-      margin: 0 auto;
-    }
-
-    h2 {
-      text-align: center;
-      font-size: 20px;
-      font-weight: 400;
-    }
-
-    h3 {
-      font-size: 14px;
-      font-weight: 700;
-      text-transform: uppercase;
-    }
-
-    li {
-      padding-bottom: .5em;
-    }
-
-    .dimensions {
-      margin-bottom: 4em;
-
-      img {
-        display: block;
-        max-width: 269px;
-        margin: 0 auto 1em;
-      }
-
-      .copy {
-        padding: 0 45px;
-
-        h3 + p {
-          font-size: 14px;
-        }
-      }
-    }
-
-    .alternate-uses {
-      margin-bottom: 4em;
-    }
-
-    @include mq__min-desktop {
-
-      > .container {
-
-        > .row {
-          display: flex;
-          margin: 0 -30px;
-        }
-      }
-
-      h2 {
-        font-size: 30px;
-      }
-
-      .dimensions,
-      .alternate-uses {
-        padding: 0 20px;
-      }
-
-      .dimensions {
-        flex: 0 0 52%;
-
-        > .row {
-          display: flex;
-          flex-direction: row-reverse;
-          align-items: center;
-        }
-      }
-
-      .alternate-uses {
-        flex: 0 0 48%;
-        padding-left: 50px;
-        border-left: 1px solid rgba($color__stratos, 0.16);
-      }
-    }
+  &[data-scent="sweet-orange-citrus"] {
+    --scent-color: #{$color__sweet-orange-citrus_text};
+    --bag-color: #{$color__sweet-orange-citrus_bag};
   }
+
+  &[data-scent="lemon-thyme"] {
+    --scent-color: #{$color__lemon-thyme_text};
+    --bag-color: #{$color__lemon-thyme_bag};
+  }
+
+  &[data-scent="citrus-sandalwood"] {
+    --scent-color: #{$color__citrus-sandalwood_text};
+    --bag-color: #{$color__citrus-sandalwood_bag};
+  }
+
+  &[data-scent="teakwood-rose"] {
+    --scent-color: #{$color__teakwood-rose_text};
+    --bag-color: #{$color__teakwood-rose_bag};
+  }
+  
+  @import "products/scent-selector";
+  @import "products/product-features";
+  @import "products/product-details";
 }

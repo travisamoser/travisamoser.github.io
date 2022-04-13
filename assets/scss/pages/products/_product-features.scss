@@ -1,0 +1,131 @@
+.product-features {
+  position: relative;
+  padding: 65px 0 40px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -190px;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    display:  block;
+    width: 100%;
+    height: 435px;
+    background-position: top right -305px;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-image: url(/assets/img/products/13-gallon-tall/bg_lavender-sage.jpg);
+  }
+
+  > .container {
+    max-width: 1088 + 40 * 1px;
+    padding: 0 20px;
+    margin: 0 auto;
+  }
+}
+
+.product-feature {
+  position: relative;
+  overflow: hidden;
+  padding: 50px 30px;
+  border: 1px solid rgba(var(--scent-color), 0.04);
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  background-color: rgba(var(--scent-color), 0.85);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -190 + -65 * 1px;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    display:  block;
+    width: 100%;
+    height: 435px;
+    background-position: top right -305 + -21 * 1px;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-image: url(/assets/img/products/13-gallon-tall/bg_lavender-sage.jpg);
+    filter: blur(10px) brightness(1.7) opacity(.85);
+  }
+
+  > svg {
+    display: block;
+    width: 104px;
+    height: auto;
+    margin: 0 auto;
+
+    path {
+      fill: var(--scent-color);
+    }
+  }
+}
+
+.col:nth-child(2) .product-feature,
+.col:nth-child(3) .product-feature {
+
+  &::before {
+    content: none;
+  }
+}
+
+@include mq__min-desktop {
+
+  .product-features {
+
+    &::before {
+      top: -430px;
+      height: 947.5px;
+      background-position: top right -660px;
+    }
+  
+    .row {
+      display: flex;
+      align-items: stretch;
+      margin: 0 -8px;
+    }
+
+    .col {
+      flex: 0 0 33.33%;
+      padding: 0 8px;
+    }
+  }
+
+  .product-feature {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .col:nth-child(1) .product-feature,
+  .col:nth-child(2) .product-feature,
+  .col:nth-child(3) .product-feature {
+
+    &::before {
+      top: -430 + -65 * 1px;
+      left: auto;
+      right: calc(-66.66vw + -660px + 4px);
+      width: 1694px;
+      height: 947.5px;
+      background-position: top right;
+    }
+  }
+
+  .col:nth-child(2) .product-feature {
+
+    &::before {
+      content: '';
+      right: calc(-33.33vw + -660px + 4px);
+    }
+  }
+
+  .col:nth-child(3) .product-feature {
+
+    &::before {
+      content: '';
+      right: -660 + 4 * 1px;
+    }
+  }
+}
