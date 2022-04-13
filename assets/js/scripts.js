@@ -9,7 +9,7 @@ var ready = function(fn) {
   }
 }
 
-var matches = function(el, selector) {
+var elMatches = function(el, selector) {
   return (el.matches || el.matchesSelector || el.msMatchesSelector || el.mozMatchesSelector || el.webkitMatchesSelector || el.oMatchesSelector).call(el, selector);
 }
 
@@ -18,7 +18,7 @@ var debounce = function(func){
   var timer;
   return function(event){
     if(timer) clearTimeout(timer);
-    timer = setTimeout(func,100,event);
+    timer = setTimeout(func,250,event);
   };
 }
 
@@ -152,7 +152,7 @@ if (document.getElementById('category-select-form')) {
     var category = el.value;
 
     Array.prototype.forEach.call(document.getElementsByClassName('article-col'), function(el, i) {
-      category === '' || matches(el, '[data-category="'+ category + '"]') ? el.style.display = 'flex' : el.style.display = 'none';
+      category === '' || elMatches(el, '[data-category="'+ category + '"]') ? el.style.display = 'flex' : el.style.display = 'none';
     });
   }, false);
 }
@@ -285,5 +285,53 @@ window.addEventListener('load', function(){
       autoplayButtonOutput: false,
       navPosition: 'bottom',
     });
+  }
+  
+  // Product Gallery Slider
+  if (document.querySelector('.product-gallery-slider')) {
+
+    // Can't use responsive options to change navigation to thumbnails
+    // so have to destroy/rebuild the slider when screen size changes
+
+    var articlesSlider;
+    var isDesktop = window.matchMedia('(min-width:960px)').matches;
+
+    function initArticlesSlider() {
+      if (isDesktop) {
+        articlesSlider = tns({
+          container: '.product-gallery-slider',
+          autoplay: false,
+          autoplayButtonOutput: false,
+          controls: false,
+          navPosition: 'bottom',
+          navContainer: '#product-gallery-thumbs',
+          navAsThumbnails: true,
+        });
+      } else {
+        articlesSlider = tns({
+          container: '.product-gallery-slider',
+          autoplay: true,
+          autoplayButtonOutput: false,
+          controls: false,
+          navPosition: 'bottom',
+        });
+      }
+    }
+
+    function rebuildArticleSlider() {
+      if (isDesktop !== window.matchMedia('(min-width:960px)').matches) {
+        isDesktop = window.matchMedia('(min-width:960px)').matches;
+        articlesSlider.destroy();
+        initArticlesSlider();
+      }
+    }
+
+    // rebuild slider when screen size changes
+    window.addEventListener('resize', function(){
+      debounce(rebuildArticleSlider());
+    });
+
+    // initial call on load
+    initArticlesSlider();
   }
 });
