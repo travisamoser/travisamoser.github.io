@@ -65,6 +65,13 @@ $color__teakwood-rose: #f65275;
 $color__teakwood-rose_text: mix(black, $color__teakwood-rose, 40%);
 $color__teakwood-rose_bag: #d19c97;
 
+:root {
+  --scent-color: #{$color__mine-shaft};
+  --scent-color-text: #{$color__mine-shaft};
+  --scent-color-border: #{rgba($color__mine-shaft, 0.04)};
+  --scent-color-bg: #{rgba(mix(white, $color__mine-shaft, 95%), 0.85)};
+  --bag-color: #{$color__manatee};
+}
 
 // logo
 $color__logo: $color__logo-blue;

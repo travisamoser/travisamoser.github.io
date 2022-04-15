@@ -29,11 +29,11 @@
   position: relative;
   overflow: hidden;
   padding: 50px 30px;
-  border: 1px solid rgba(var(--scent-color), 0.04);
+  border: 1px solid var(--scent-color-border);
   border-radius: 8px;
   margin-bottom: 20px;
   text-align: center;
-  background-color: rgba(var(--scent-color), 0.85);
+  background-color: var(--scent-color-bg);
 
   &::before {
     content: '';
@@ -49,7 +49,7 @@
     background-size: auto 100%;
     background-repeat: no-repeat;
     background-image: url(/assets/img/products/13-gallon-tall/bg_lavender-sage.jpg);
-    filter: blur(10px) brightness(1.7) opacity(.85);
+    filter: blur(4px) brightness(1.1);
   }
 
   > svg {
@@ -104,28 +104,64 @@
   .col:nth-child(3) .product-feature {
 
     &::before {
-      top: -430 + -65 * 1px;
+      top: -496px;
       left: auto;
-      right: calc(-66.66vw + -660px + 4px);
+      right: calc(-66.66vw + -660px + 5px);
       width: 1694px;
       height: 947.5px;
       background-position: top right;
     }
   }
 
+  .col:nth-child(2) .product-feature,
+  .col:nth-child(3) .product-feature {
+  
+    &::before {
+      content: '';
+    }
+  }
+  
   .col:nth-child(2) .product-feature {
 
     &::before {
-      content: '';
-      right: calc(-33.33vw + -660px + 4px);
+      right: calc(-33.33vw + -660px + -8px);
     }
   }
 
   .col:nth-child(3) .product-feature {
 
     &::before {
-      content: '';
-      right: -660 + 4 * 1px;
+      right: -660 + -21 * 1px;
+    }
+  }
+}
+
+//
+// TODO  
+// FIX BG POSITIONING FOR LARGER SCREENS
+//
+@media screen and (min-width:1128px) {
+
+  .col:nth-child(1) .product-feature,
+  .col:nth-child(2) .product-feature,
+  .col:nth-child(3) .product-feature {
+
+    &::before {
+      right: calc(-66.66vw + -660px + 5px);
+    }
+  }
+  
+  .col:nth-child(2) .product-feature {
+
+    &::before {
+      right: calc(-33.33vw + -660px + -8px);
+    }
+  }
+
+  .col:nth-child(3) .product-feature {
+
+    &::before {
+      right: -660 + -21 * 1px;
     }
   }
 }

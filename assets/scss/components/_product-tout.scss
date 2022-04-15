@@ -3,8 +3,7 @@
 // -----------------------------------------------------------------------------
 
 .product-tout {
-  width: 260px;
-  height: 260px;
+  max-width: 260px;
   margin: 0 auto 26px;
   border-radius: 8px;
 
@@ -13,6 +12,7 @@
     display: block;
     height: 100%;
     overflow: hidden;
+    padding-bottom: 100%;
 
     &::after {
       content: '';

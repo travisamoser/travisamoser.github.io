@@ -48,14 +48,20 @@
 }
 
 .category-select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: relative;
   width: 100%;
-  padding: 9px 18px;
+  padding: 10px 50px 10px 18px;
   border: 2px solid rgba($color__manatee,0.35);
   border-radius: 4px;
   font-weight: 700;
-  line-height: 1;
   color: $color__stratos;
-  background: rgba(255,255,255,0.35);
+  background-image: url('../img/bg_select.svg');
+  background-position: right 20px center;
+  background-repeat: no-repeat;
+  background-color: rgba($color__manatee, 0.05);
 
   @include mq__min-tablet {
     width: 333px;

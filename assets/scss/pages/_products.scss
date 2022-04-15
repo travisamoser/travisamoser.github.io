@@ -2,62 +2,85 @@
 // This file contains styles that are specific to the product pages.
 // -----------------------------------------------------------------------------
 
-
-:root {
-  --scent-color: #{$color__mine-shaft};
-  --bag-color: #{$color__manatee};
-}
-
-
 .page-products {
 
   &[data-scent="lavender"] {
-    --scent-color: #{$color__lavender_text};
+    --scent-color: #{$color__lavender};
+    --scent-color-text: #{$color__lavender_text};
+    --scent-color-border: #{rgba($color__lavender, 0.05)};
+    --scent-color-bg: #{rgba(mix(white, $color__lavender, 95%), 0.75)};
     --bag-color: #{$color__lavender_bag};
   }
 
   &[data-scent="ocean-mist"] {
-    --scent-color: #{$color__ocean-mist_text};
+    --scent-color: #{$color__ocean-mist};
+    --scent-color-text: #{$color__ocean-mist_text};
+    --scent-color-border: #{rgba($color__ocean-mist, 0.05)};
+    --scent-color-bg: #{rgba(mix(white, $color__ocean-mist, 95%), 0.75)};
     --bag-color: #{$color__ocean-mist_bag};
   }
 
   &[data-scent="vanilla-flower"] {
-    --scent-color: #{$color__vanilla-flower_text};
+    --scent-color: #{$color__vanilla-flower};
+    --scent-color-text: #{$color__vanilla-flower_text};
+    --scent-color-border: #{rgba($color__vanilla-flower, 0.1)};
+    --scent-color-bg: #{rgba(mix(white, $color__vanilla-flower, 95%), 0.75)};
     --bag-color: #{$color__vanilla-flower_bag};
   }
 
   &[data-scent="simply-clean"] {
-    --scent-color: #{$color__simply-clean_text};
+    --scent-color: #{$color__simply-clean};
+    --scent-color-text: #{$color__simply-clean_text};
+    --scent-color-border: #{rgba($color__simply-clean, 0.1)};
+    --scent-color-bg: #{rgba(mix(white, $color__simply-clean, 95%), 0.75)};
     --bag-color: #{$color__simply-clean_bag};
   }
   
   &[data-scent="lavender-sage"] {
-    --scent-color: #{$color__lavender-sage_text};
+    --scent-color: #{$color__lavender-sage};
+    --scent-color-text: #{$color__lavender-sage_text};
+    --scent-color-border: #{rgba($color__lavender-sage, 0.05)};
+    --scent-color-bg: #{rgba(mix(white, $color__lavender-sage, 95%), 0.75)};
     --bag-color: #{$color__lavender-sage_bag};
   }
 
   &[data-scent="fresh-air"] {
-    --scent-color: #{$color__fresh-air_text};
+    --scent-color: #{$color__fresh-air};
+    --scent-color-text: #{$color__fresh-air_text};
+    --scent-color-border: #{rgba($color__fresh-air, 0.05)};
+    --scent-color-bg: #{rgba(mix(white, $color__fresh-air, 95%), 0.75)};
     --bag-color: #{$color__fresh-air_bag};
   }
 
   &[data-scent="sweet-orange-citrus"] {
-    --scent-color: #{$color__sweet-orange-citrus_text};
+    --scent-color: #{$color__sweet-orange-citrus};
+    --scent-color-text: #{$color__sweet-orange-citrus_text};
+    --scent-color-border: #{rgba($color__sweet-orange-citrus, 0.05)};
+    --scent-color-bg: #{rgba(mix(white, $color__sweet-orange-citrus, 95%), 0.75)};
     --bag-color: #{$color__sweet-orange-citrus_bag};
   }
 
   &[data-scent="lemon-thyme"] {
-    --scent-color: #{$color__lemon-thyme_text};
+    --scent-color: #{$color__lemon-thyme};
+    --scent-color-text: #{$color__lemon-thyme_text};
+    --scent-color-border: #{rgba($color__lemon-thyme, 0.1)};
+    --scent-color-bg: #{rgba(mix(white, $color__lemon-thyme, 95%), 0.75)};
     --bag-color: #{$color__lemon-thyme_bag};
   }
 
   &[data-scent="citrus-sandalwood"] {
-    --scent-color: #{$color__citrus-sandalwood_text};
+    --scent-color: #{$color__citrus-sandalwood};
+    --scent-color-text: #{$color__citrus-sandalwood_text};
+    --scent-color-border: #{rgba($color__citrus-sandalwood, 0.1)};
+    --scent-color-bg: #{rgba(mix(white, $color__citrus-sandalwood, 95%), 0.75)};
     --bag-color: #{$color__citrus-sandalwood_bag};
   }
 
   &[data-scent="teakwood-rose"] {
-    --scent-color: #{$color__teakwood-rose_text};
+    --scent-color: #{$color__teakwood-rose};
+    --scent-color-text: #{$color__teakwood-rose_text};
+    --scent-color-border: #{rgba($color__teakwood-rose, 0.05)};
+    --scent-color-bg: #{rgba(mix(white, $color__teakwood-rose, 95%), 0.75)};
     --bag-color: #{$color__teakwood-rose_bag};
   }
   

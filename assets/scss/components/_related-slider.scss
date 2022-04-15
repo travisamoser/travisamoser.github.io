@@ -69,6 +69,7 @@
     height: 100%;
     padding: 35px 35px;
     border-radius: 8px;
+    background-color: rgba(255,255,255,0);
 
     @include mq__max-tablet {
       text-decoration: none;
@@ -77,11 +78,16 @@
     }
 
     @include mq__min-desktop {
+      transition: all 0.3s ease-in-out;
+
+      h3 {
+        transition: color 0.3s ease-in-out;
+      }
 
       &:hover,
       &:active {
         text-decoration: none;
-        background-color: white;
+        background-color: rgba(255,255,255,1);
         box-shadow: 0 0 10px rgba(0,0,0,0.08);
   
         h3 {

@@ -46,6 +46,19 @@
   font-weight: 900 !important;
 }
 
+.uppercase {
+  text-transform: uppercase !important;
+}
+.lowercase {
+  text-transform: lowercase !important;
+}
+.capitalize {
+  text-transform: capitalize !important;
+}
+.normal-case {
+  text-transform: none !important;
+}
+
 .columns-2 {
   columns: 2 !important;
 }
