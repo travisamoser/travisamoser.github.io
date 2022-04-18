@@ -3,6 +3,25 @@
 // -----------------------------------------------------------------------------
 
 .page-products {
+  --bg_image: none;
+
+  // mobile bg image custom properties
+  // source image: 3388 x 1895
+  --container-bg_x-offset-mobile: 0;
+  --container-bg_y-offset-mobile: -190px;
+  --bg_width-mobile: 100%;
+  --bg_height-mobile: 435px;
+  --bg_x-offset-mobile: -305px;
+  --bg_y-offset-mobile: 0;
+
+  // deaktop bg image custom properties
+  // source image: 3388 x 1895
+  --container-bg_x-offset-desktop: 0;
+  --container-bg_y-offset-desktop: -430px;
+  --bg_width-desktop: 100%;
+  --bg_height-desktop: 947.5px;
+  --bg_x-offset-desktop: -660px;
+  --bg_y-offset-desktop: var(--container-bg_y-offset-desktop);
 
   &[data-scent="lavender"] {
     --scent-color: #{$color__lavender};
@@ -10,6 +29,7 @@
     --scent-color-border: #{rgba($color__lavender, 0.05)};
     --scent-color-bg: #{rgba(mix(white, $color__lavender, 95%), 0.75)};
     --bag-color: #{$color__lavender_bag};
+    --bg_image: url('/assets/img/products/13-gallon-tall/bg_lavender-sage.jpg');
   }
 
   &[data-scent="ocean-mist"] {
@@ -42,6 +62,7 @@
     --scent-color-border: #{rgba($color__lavender-sage, 0.05)};
     --scent-color-bg: #{rgba(mix(white, $color__lavender-sage, 95%), 0.75)};
     --bag-color: #{$color__lavender-sage_bag};
+    --bg_image: url('/assets/img/products/13-gallon-tall/bg_lavender-sage.jpg');
   }
 
   &[data-scent="fresh-air"] {

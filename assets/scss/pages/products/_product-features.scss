@@ -5,17 +5,16 @@
   &::before {
     content: '';
     position: absolute;
-    top: -190px;
-    left: 0;
-    right: 0;
+    top: var(--container-bg_y-offset-mobile);
+    left: var(--container-bg_x-offset-mobile);
     z-index: -1;
     display:  block;
-    width: 100%;
-    height: 435px;
-    background-position: top right -305px;
+    width: var(--bg_width-mobile);
+    height: var(--bg_height-mobile);
+    background-position: top var(--bg_y-offset-mobile) right var(--bg_x-offset-mobile);
     background-size: auto 100%;
     background-repeat: no-repeat;
-    background-image: url(/assets/img/products/13-gallon-tall/bg_lavender-sage.jpg);
+    background-image: var(--bg_image);
   }
 
   > .container {
@@ -38,18 +37,17 @@
   &::before {
     content: '';
     position: absolute;
-    top: -190 + -65 * 1px;
-    left: 0;
-    right: 0;
+    top: calc(var(--container-bg_y-offset-mobile) + -65px);
+    left: var(--container-bg_x-offset-mobile);
     z-index: -1;
     display:  block;
     width: 100%;
-    height: 435px;
-    background-position: top right -305 + -21 * 1px;
+    height: var(--bg_height-mobile);
+    background-position: top var(--bg_y-offset-mobile) right calc(var(--bg_x-offset-mobile) +  -21px);
     background-size: auto 100%;
     background-repeat: no-repeat;
-    background-image: url(/assets/img/products/13-gallon-tall/bg_lavender-sage.jpg);
-    filter: blur(4px) brightness(1.1);
+    background-image: var(--bg_image);
+    filter: blur(2px) brightness(1.1);
   }
 
   > svg {
@@ -77,9 +75,11 @@
   .product-features {
 
     &::before {
-      top: -430px;
-      height: 947.5px;
-      background-position: top right -660px;
+      top: var(--container-bg_y-offset-desktop);
+      left: var(--container-bg_x-offset-desktop);
+      width: var(--bg_width-desktop);
+      height: var(--bg_height-desktop);
+      background-position: top right var(--bg_x-offset-desktop);
     }
   
     .row {
@@ -96,7 +96,6 @@
 
   .product-feature {
     height: 100%;
-    overflow: hidden;
   }
 
   .col:nth-child(1) .product-feature,
@@ -104,12 +103,12 @@
   .col:nth-child(3) .product-feature {
 
     &::before {
-      top: -496px;
-      left: auto;
-      right: calc(-66.66vw + -660px + 5px);
-      width: 1694px;
-      height: 947.5px;
-      background-position: top right;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      background-size: auto var(--bg_height-desktop);
+      background-position: top calc(var(--bg_y-offset-desktop) + -66px) right calc(-67.2vw + var(--bg_x-offset-desktop));
     }
   }
 
@@ -124,22 +123,18 @@
   .col:nth-child(2) .product-feature {
 
     &::before {
-      right: calc(-33.33vw + -660px + -8px);
+      background-position: top calc(var(--bg_y-offset-desktop) + -66px) right calc(-34.6vw + var(--bg_x-offset-desktop));
     }
   }
 
   .col:nth-child(3) .product-feature {
 
     &::before {
-      right: -660 + -21 * 1px;
+      background-position: top calc(var(--bg_y-offset-desktop) + -66px) right calc(-21px + var(--bg_x-offset-desktop));
     }
   }
 }
 
-//
-// TODO  
-// FIX BG POSITIONING FOR LARGER SCREENS
-//
 @media screen and (min-width:1128px) {
 
   .col:nth-child(1) .product-feature,
@@ -147,21 +142,21 @@
   .col:nth-child(3) .product-feature {
 
     &::before {
-      right: calc(-66.66vw + -660px + 5px);
+      background-position: top calc(var(--bg_y-offset-desktop) + -66px) right calc(-736px - 14px - ((100vw - 1128px) / 2) + var(--bg_x-offset-desktop));
     }
   }
   
   .col:nth-child(2) .product-feature {
 
     &::before {
-      right: calc(-33.33vw + -660px + -8px);
+      background-position: top calc(var(--bg_y-offset-desktop) + -66px) right calc(-368px - 14px - ((100vw - 1128px) / 2) + var(--bg_x-offset-desktop));
     }
   }
 
   .col:nth-child(3) .product-feature {
 
     &::before {
-      right: -660 + -21 * 1px;
+      background-position: top calc(var(--bg_y-offset-desktop) + -66px) right calc(-14px - ((100vw - 1128px) / 2) + var(--bg_x-offset-desktop));
     }
   }
 }
