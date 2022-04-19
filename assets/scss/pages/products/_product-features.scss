@@ -15,6 +15,8 @@
     background-size: auto 100%;
     background-repeat: no-repeat;
     background-image: var(--bg_image);
+    filter: blur(1px);
+    opacity: 0.5;
   }
 
   > .container {
@@ -47,7 +49,8 @@
     background-size: auto 100%;
     background-repeat: no-repeat;
     background-image: var(--bg_image);
-    filter: blur(2px) brightness(1.1);
+    filter: blur(3px) brightness(1.2);
+    opacity: 0.5;
   }
 
   > svg {
@@ -71,6 +74,7 @@
 }
 
 @include mq__min-desktop {
+  padding-bottom: 60px;
 
   .product-features {
 
@@ -157,6 +161,39 @@
 
     &::before {
       background-position: top calc(var(--bg_y-offset-desktop) + -66px) right calc(-14px - ((100vw - 1128px) / 2) + var(--bg_x-offset-desktop));
+    }
+  }
+}
+
+@media screen and (min-width:1396px) {
+  
+  .product-features {
+
+    &::before {
+      background-position: top right var(--bg_x-offset-desktop-wide);
+    }
+  }
+
+  .col:nth-child(1) .product-feature,
+  .col:nth-child(2) .product-feature,
+  .col:nth-child(3) .product-feature {
+
+    &::before {
+      background-position: top calc(var(--bg_y-offset-desktop) + -66px) right calc(-736px - 14px - ((100vw - 1128px) / 2) + var(--bg_x-offset-desktop-wide));
+    }
+  }
+  
+  .col:nth-child(2) .product-feature {
+
+    &::before {
+      background-position: top calc(var(--bg_y-offset-desktop) + -66px) right calc(-368px - 14px - ((100vw - 1128px) / 2) + var(--bg_x-offset-desktop-wide));
+    }
+  }
+
+  .col:nth-child(3) .product-feature {
+
+    &::before {
+      background-position: top calc(var(--bg_y-offset-desktop) + -66px) right calc(-14px - ((100vw - 1128px) / 2) + var(--bg_x-offset-desktop-wide));
     }
   }
 }

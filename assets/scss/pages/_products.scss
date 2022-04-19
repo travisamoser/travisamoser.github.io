@@ -6,21 +6,22 @@
   --bg_image: none;
 
   // mobile bg image custom properties
-  // source image: 3388 x 1895
+  // source image: 2732 x 1600
   --container-bg_x-offset-mobile: 0;
-  --container-bg_y-offset-mobile: -190px;
+  --container-bg_y-offset-mobile: -150px;
   --bg_width-mobile: 100%;
-  --bg_height-mobile: 435px;
-  --bg_x-offset-mobile: -305px;
+  --bg_height-mobile: 400px;
+  --bg_x-offset-mobile: -110px;
   --bg_y-offset-mobile: 0;
 
   // deaktop bg image custom properties
-  // source image: 3388 x 1895
+  // source image: 2732 x 1600
   --container-bg_x-offset-desktop: 0;
-  --container-bg_y-offset-desktop: -430px;
+  --container-bg_y-offset-desktop: -65px;
   --bg_width-desktop: 100%;
-  --bg_height-desktop: 947.5px;
-  --bg_x-offset-desktop: -660px;
+  --bg_height-desktop: 800px;
+  --bg_x-offset-desktop: calc(100vw - 1366px - 30px);
+  --bg_x-offset-desktop-wide: 0px;
   --bg_y-offset-desktop: var(--container-bg_y-offset-desktop);
 
   &[data-scent="lavender"] {
@@ -29,7 +30,8 @@
     --scent-color-border: #{rgba($color__lavender, 0.05)};
     --scent-color-bg: #{rgba(mix(white, $color__lavender, 95%), 0.75)};
     --bag-color: #{$color__lavender_bag};
-    --bg_image: url('/assets/img/products/13-gallon-tall/bg_lavender-sage.jpg');
+    --bg_image: url('/assets/img/products/bg_lavender.jpg');
+    --container-bg_y-offset-desktop: -330px;
   }
 
   &[data-scent="ocean-mist"] {
@@ -38,6 +40,8 @@
     --scent-color-border: #{rgba($color__ocean-mist, 0.05)};
     --scent-color-bg: #{rgba(mix(white, $color__ocean-mist, 95%), 0.75)};
     --bag-color: #{$color__ocean-mist_bag};
+    --bg_image: url('/assets/img/products/bg_ocean-mist.jpg');
+    --container-bg_y-offset-desktop: -85px;
   }
 
   &[data-scent="vanilla-flower"] {
@@ -46,6 +50,8 @@
     --scent-color-border: #{rgba($color__vanilla-flower, 0.1)};
     --scent-color-bg: #{rgba(mix(white, $color__vanilla-flower, 95%), 0.75)};
     --bag-color: #{$color__vanilla-flower_bag};
+    --bg_image: url('/assets/img/products/bg_vanilla-flower.jpg');
+    --container-bg_y-offset-desktop: -210px;
   }
 
   &[data-scent="simply-clean"] {
@@ -54,6 +60,8 @@
     --scent-color-border: #{rgba($color__simply-clean, 0.1)};
     --scent-color-bg: #{rgba(mix(white, $color__simply-clean, 95%), 0.75)};
     --bag-color: #{$color__simply-clean_bag};
+    --bg_image: url('/assets/img/products/bg_simply-clean.jpg');
+    --container-bg_y-offset-desktop: -280px;
   }
   
   &[data-scent="lavender-sage"] {
@@ -62,7 +70,8 @@
     --scent-color-border: #{rgba($color__lavender-sage, 0.05)};
     --scent-color-bg: #{rgba(mix(white, $color__lavender-sage, 95%), 0.75)};
     --bag-color: #{$color__lavender-sage_bag};
-    --bg_image: url('/assets/img/products/13-gallon-tall/bg_lavender-sage.jpg');
+    --bg_image: url('/assets/img/products/bg_lavender-sage.jpg');
+    --container-bg_y-offset-desktop: -185px;
   }
 
   &[data-scent="fresh-air"] {
@@ -71,6 +80,8 @@
     --scent-color-border: #{rgba($color__fresh-air, 0.05)};
     --scent-color-bg: #{rgba(mix(white, $color__fresh-air, 95%), 0.75)};
     --bag-color: #{$color__fresh-air_bag};
+    --bg_image: url('/assets/img/products/bg_fresh-air.jpg');
+    --container-bg_y-offset-desktop: -210px;
   }
 
   &[data-scent="sweet-orange-citrus"] {
@@ -79,6 +90,8 @@
     --scent-color-border: #{rgba($color__sweet-orange-citrus, 0.05)};
     --scent-color-bg: #{rgba(mix(white, $color__sweet-orange-citrus, 95%), 0.75)};
     --bag-color: #{$color__sweet-orange-citrus_bag};
+    --bg_image: url('/assets/img/products/bg_sweet-orange-citrus.jpg');
+    --container-bg_y-offset-desktop: -230px;
   }
 
   &[data-scent="lemon-thyme"] {
@@ -95,6 +108,8 @@
     --scent-color-border: #{rgba($color__citrus-sandalwood, 0.1)};
     --scent-color-bg: #{rgba(mix(white, $color__citrus-sandalwood, 95%), 0.75)};
     --bag-color: #{$color__citrus-sandalwood_bag};
+    --bg_image: url('/assets/img/products/bg_citrus-sandalwood.jpg');
+    --container-bg_y-offset-desktop: -230px;
   }
 
   &[data-scent="teakwood-rose"] {
@@ -103,6 +118,26 @@
     --scent-color-border: #{rgba($color__teakwood-rose, 0.05)};
     --scent-color-bg: #{rgba(mix(white, $color__teakwood-rose, 95%), 0.75)};
     --bag-color: #{$color__teakwood-rose_bag};
+    --bg_image: url('/assets/img/products/bg_teakwood-rose.jpg');
+    --container-bg_y-offset-desktop: -230px;
+  }
+
+  &[data-scent="calming-collection"] {
+    --scent-color: #{$color__fresh-air};
+    --scent-color-text: #{$color__fresh-air_text};
+    --scent-color-border: #{rgba($color__fresh-air, 0.05)};
+    --scent-color-bg: #{rgba(mix(white, $color__fresh-air, 95%), 0.75)};
+    --bag-color: #{$color__fresh-air_bag};
+    --bg_image: url('/assets/img/products/bg_calming-collection.jpg');
+    --container-bg_y-offset-desktop: -150px;
+  }
+
+  &[data-scent="fresh-collection"] {
+    --scent-color: #{$color__citrus-sandalwood};
+    --scent-color-text: #{$color__citrus-sandalwood_text};
+    --scent-color-border: #{rgba($color__citrus-sandalwood, 0.1)};
+    --scent-color-bg: #{rgba(mix(white, $color__citrus-sandalwood, 95%), 0.75)};
+    --bag-color: #{$color__citrus-sandalwood_bag};
   }
   
   @import "products/scent-selector";

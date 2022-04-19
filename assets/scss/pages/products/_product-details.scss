@@ -46,6 +46,7 @@
   }
 
   @include mq__min-desktop {
+    padding-top: 60px;
 
     > .container {
 
