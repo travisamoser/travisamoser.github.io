@@ -61,7 +61,7 @@
     --scent-color-bg: #{rgba(mix(white, $color__simply-clean, 95%), 0.75)};
     --bag-color: #{$color__simply-clean_bag};
     --bg_image: url('/assets/img/products/bg_simply-clean.jpg');
-    --container-bg_y-offset-desktop: -280px;
+    --container-bg_y-offset-desktop: -210px;
   }
   
   &[data-scent="lavender-sage"] {
@@ -71,7 +71,7 @@
     --scent-color-bg: #{rgba(mix(white, $color__lavender-sage, 95%), 0.75)};
     --bag-color: #{$color__lavender-sage_bag};
     --bg_image: url('/assets/img/products/bg_lavender-sage.jpg');
-    --container-bg_y-offset-desktop: -185px;
+    --container-bg_y-offset-desktop: -150px;
   }
 
   &[data-scent="fresh-air"] {
