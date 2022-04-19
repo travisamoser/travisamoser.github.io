@@ -222,19 +222,139 @@ Array.prototype.forEach.call(formInputs, function(el, i){
   });
 });
 
-
 //-----------------------------------------------------------------------------
-// Scent Selector
+// Product Gallery
 //
-if (document.getElementById('scent')) {
-  var scentSelect = document.getElementById('scent');
+window.addEventListener('load', function(){
 
-  document.body.setAttribute('data-scent', scentSelect.value);
+  if (document.getElementById('scent') && document.querySelector('.product-gallery-slider')) {
 
-  scentSelect.addEventListener('change', function (e) {
-    document.body.setAttribute('data-scent', e.target.value);
-  });
-}
+    var size = document.body.getAttribute('data-size');
+    var scentSelect = document.getElementById('scent');
+    var gallerySlider;
+    var isDesktop = window.matchMedia('(min-width:960px)').matches;
+    var productImages = {
+      '4-gallon-small-bathroom': {
+        'citrus-sandalwood': [
+          '4gal-citrus-sandalwood-front.jpg',
+          '4gal-citrus-sandalwood-back.jpg'
+        ],
+        'lavender': [
+          '4gal-lavender-front.jpg',
+          '4gal-lavender-back.jpg'
+        ],
+        'ocean-mist': [
+          '4gal-ocean-mist-front.jpg',
+          '4gal-ocean-mist-back.jpg'
+        ],
+        'teakwood-rose': [
+          '4gal-teakwood-rose-front.jpg',
+          '4gal-teakwood-rose-back.jpg'
+        ]
+      },
+      '8-gallon-medium-laundry-office': {
+        'fresh-air': [
+          '8gal-fresh-air-front.jpg',
+          '8gal-fresh-air-back.jpg'
+        ],
+        'lavender-sage': [
+          '8gal-lavender-sage-front.jpg',
+          '8gal-lavender-sage-back.jpg'
+        ],
+        'vanilla-flower': [
+          '8gal-vanilla-flower-front.jpg',
+          '8gal-vanilla-flower-back.jpg'
+        ]
+      },
+      '8-gallon-medium-kitchen': {
+        'simply-clean': [
+          '8gal-simply-clean-front.jpg',
+          '8gal-simply-clean-back.jpg'
+        ]
+      },
+      '13-gallon-tall-kitchen': {
+        'fresh-air': [
+          '13gal-fresh-air-horizontal.jpg',
+          '13gal-fresh-air-vertical.jpg'
+        ],
+        'lavender-sage': [
+          '13gal-lavender-sage-horizontal.jpg',
+          '13gal-lavender-sage-vertical.jpg'
+        ],
+        'simply-clean': [
+          '13gal-simply-clean-horizontal.jpg',
+          '13gal-simply-clean-vertical.jpg'
+        ],
+        'sweet-orange-citrus': [
+          '13gal-sweet-orange-citrus-horizontal.jpg',
+          '13gal-sweet-orange-citrus-vertical.jpg'
+        ]
+      }
+    }
+
+    function initGallerySlider(size, scent, productImages) {
+      var imgSrcs = productImages[size][scent];
+      var imgLocation = '/assets/img/products/' + size + '/'
+      var productGalleryImages = document.querySelectorAll('.product-gallery-slider > img');
+      var productGalleryThumbs = document.querySelectorAll('.product-gallery-thumbs > img');
+
+      Array.prototype.forEach.call(productGalleryImages, function(el, i){
+        el.src = imgLocation + imgSrcs[i];
+      });
+
+      Array.prototype.forEach.call(productGalleryThumbs, function(el, i){
+        el.src = imgLocation + imgSrcs[i];
+      });
+
+      if (isDesktop) {
+        gallerySlider = tns({
+          container: '.product-gallery-slider',
+          autoplay: false,
+          autoplayButtonOutput: false,
+          controls: false,
+          navPosition: 'bottom',
+          navContainer: '#product-gallery-thumbs',
+          navAsThumbnails: true,
+        });
+      } else {
+        gallerySlider = tns({
+          container: '.product-gallery-slider',
+          autoplay: true,
+          autoplayButtonOutput: false,
+          controls: false,
+          navPosition: 'bottom',
+        });
+      }
+    }
+
+    function rebuildGallerySlider(size, scent, productImages) {
+      if (isDesktop !== window.matchMedia('(min-width:960px)').matches) {
+        isDesktop = window.matchMedia('(min-width:960px)').matches;
+        gallerySlider.destroy();
+        initGallerySlider(size, scent, productImages);
+      }
+    }
+
+    function rebuildGallerySliderScent(size, scent, productImages) {
+      gallerySlider.destroy();
+      initGallerySlider(size, scent, productImages);
+    }
+
+    document.body.setAttribute('data-scent', scentSelect.value);
+    initGallerySlider(size, scentSelect.value, productImages);
+
+    scentSelect.addEventListener('change', function (e) {
+      document.body.setAttribute('data-scent', e.target.value);
+      rebuildGallerySliderScent(size, e.target.value, productImages)
+    });
+
+    // rebuild slider when screen size changes
+    window.addEventListener('resize', function(){
+      debounce(rebuildGallerySlider(size, scentSelect.value, productImages));
+    });
+  }
+});
+
 //-----------------------------------------------------------------------------
 // Sliders
 //
@@ -298,53 +418,5 @@ window.addEventListener('load', function(){
       autoplayButtonOutput: false,
       navPosition: 'bottom',
     });
-  }
-  
-  // Product Gallery Slider
-  if (document.querySelector('.product-gallery-slider')) {
-
-    // Can't use responsive options to change navigation to thumbnails
-    // so have to destroy/rebuild the slider when screen size changes
-
-    var articlesSlider;
-    var isDesktop = window.matchMedia('(min-width:960px)').matches;
-
-    function initArticlesSlider() {
-      if (isDesktop) {
-        articlesSlider = tns({
-          container: '.product-gallery-slider',
-          autoplay: false,
-          autoplayButtonOutput: false,
-          controls: false,
-          navPosition: 'bottom',
-          navContainer: '#product-gallery-thumbs',
-          navAsThumbnails: true,
-        });
-      } else {
-        articlesSlider = tns({
-          container: '.product-gallery-slider',
-          autoplay: true,
-          autoplayButtonOutput: false,
-          controls: false,
-          navPosition: 'bottom',
-        });
-      }
-    }
-
-    function rebuildArticleSlider() {
-      if (isDesktop !== window.matchMedia('(min-width:960px)').matches) {
-        isDesktop = window.matchMedia('(min-width:960px)').matches;
-        articlesSlider.destroy();
-        initArticlesSlider();
-      }
-    }
-
-    // rebuild slider when screen size changes
-    window.addEventListener('resize', function(){
-      debounce(rebuildArticleSlider());
-    });
-
-    // initial call on load
-    initArticlesSlider();
   }
 });
