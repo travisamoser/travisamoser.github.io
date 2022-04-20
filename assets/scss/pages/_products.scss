@@ -20,9 +20,12 @@
   --container-bg_y-offset-desktop: -65px;
   --bg_width-desktop: 100%;
   --bg_height-desktop: 800px;
-  --bg_x-offset-desktop: calc(100vw - 1366px - 30px);
-  --bg_x-offset-desktop-wide: 0px;
+  --bg_x-offset-desktop: calc(100vw - 1396px);
   --bg_y-offset-desktop: var(--container-bg_y-offset-desktop);
+
+  @media screen and (min-width:1396px) {
+    --bg_x-offset-desktop: 0px;
+  }
 
   &[data-scent="lavender"] {
     --scent-color: #{$color__lavender};
