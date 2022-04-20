@@ -250,6 +250,14 @@ window.addEventListener('load', function(){
         'teakwood-rose': [
           '4gal-teakwood-rose-front.jpg',
           '4gal-teakwood-rose-back.jpg'
+        ],
+        'calming-collection': [
+          '4gal-calming-collection-front.jpg',
+          '4gal-calming-collection-angle.jpg'
+        ],
+        'fresh-collection': [
+          '4gal-fresh-collection-front.jpg',
+          '4gal-fresh-collection-angle.jpg'
         ]
       },
       '8-gallon-medium-laundry-office': {
@@ -264,6 +272,10 @@ window.addEventListener('load', function(){
         'vanilla-flower': [
           '8gal-vanilla-flower-front.jpg',
           '8gal-vanilla-flower-back.jpg'
+        ],
+        'clean-collection': [
+          '8gal-clean-collection-front.jpg',
+          '8gal-clean-collection-angle.jpg'
         ]
       },
       '8-gallon-medium-kitchen': {

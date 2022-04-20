@@ -97,14 +97,6 @@
     --container-bg_y-offset-desktop: -230px;
   }
 
-  &[data-scent="lemon-thyme"] {
-    --scent-color: #{$color__lemon-thyme};
-    --scent-color-text: #{$color__lemon-thyme_text};
-    --scent-color-border: #{rgba($color__lemon-thyme, 0.1)};
-    --scent-color-bg: #{rgba(mix(white, $color__lemon-thyme, 95%), 0.75)};
-    --bag-color: #{$color__lemon-thyme_bag};
-  }
-
   &[data-scent="citrus-sandalwood"] {
     --scent-color: #{$color__citrus-sandalwood};
     --scent-color-text: #{$color__citrus-sandalwood_text};
@@ -141,6 +133,14 @@
     --scent-color-border: #{rgba($color__citrus-sandalwood, 0.1)};
     --scent-color-bg: #{rgba(mix(white, $color__citrus-sandalwood, 95%), 0.75)};
     --bag-color: #{$color__citrus-sandalwood_bag};
+  }
+
+  &[data-scent="clean-collection"] {
+    --scent-color: #{$color__lavender};
+    --scent-color-text: #{$color__lavender_text};
+    --scent-color-border: #{rgba($color__lavender, 0.1)};
+    --scent-color-bg: #{rgba(mix(white, $color__lavender, 95%), 0.75)};
+    --bag-color: #{$color__lavender_bag};
   }
   
   @import "products/scent-selector";
