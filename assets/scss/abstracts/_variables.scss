@@ -17,9 +17,12 @@ $desktop-width-min: 960px;
 $color__stratos: #00194a; // a bit darker than logo blue
 $color__royal-blue: #2b7de1;
 $color__bahama-blue: #0065a1;
+$color__fun-blue: #1857A5; // royal blue and fun blue on white do not have sufficent contrast
 $color__manatee: #9397a9;
+$color__scorpion: #595959;
 $color__mine-shaft: #3b3b3b;
 $color__dove-gray: #707070;
+$color__comet: #545869;
 
 // brand colors
 $color__logo-blue: #00235b;
@@ -77,7 +80,10 @@ $color__teakwood-rose_bag: #d19c97;
 $color__logo: $color__logo-blue;
 
 // text
-$color_text: $color__mine-shaft;
+$color__text: $color__mine-shaft;
+$color__heading: $color__stratos;
+$color__link: $color__fun-blue;
+$color__link-hover: $color__logo-blue;
 
 // fonts
 // https://www.cssfontstack.com/

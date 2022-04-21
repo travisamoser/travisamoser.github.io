@@ -102,12 +102,12 @@
   
         &:hover,
         &.active {
-          color: $color__royal-blue;
+          color: $color__fun-blue;
         }
       }
 
       .dropdown-toggle.active {
-        color: $color__royal-blue;
+        color: $color__fun-blue;
       }
     }
   
@@ -206,10 +206,10 @@
   
         .dropdown-toggle {
           z-index: 1;
-          color: $color__royal-blue;
+          color: $color__fun-blue;
   
           &::after {
-            border-color: transparent $color__royal-blue $color__royal-blue transparent;
+            border-color: transparent $color__fun-blue $color__fun-blue transparent;
           }
         }
   

@@ -141,7 +141,6 @@ Array.prototype.forEach.call(navItemDropdowns, function(el, i){
   })
 });
 
-
 //-----------------------------------------------------------------------------
 // Articles Category Select
 //
@@ -426,7 +425,7 @@ window.addEventListener('load', function(){
 });
 
 //-----------------------------------------------------------------------------
-// Sliders
+// 
 //
 window.addEventListener('load', function(){
 

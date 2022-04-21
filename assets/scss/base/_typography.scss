@@ -3,18 +3,18 @@
  */
 
 body {
-  color: $color_text;
+  color: $color__text;
   font: normal 100% / 1.5 $font__nunito-sans;
 }
 
 a {
   text-decoration: none;
-  color: $color__royal-blue;
+  color: $color__link;
 
   &:hover,
   &:active {
     text-decoration: underline;
-    color: $color__bahama-blue;
+    color: $color__link-hover;
   }
 }
 
@@ -25,7 +25,7 @@ h4,
 h5,
 h6 {
   margin: 1em 0 .5em;
-  color: $color__stratos;
+  color: $color__heading;
 }
 
 h5,

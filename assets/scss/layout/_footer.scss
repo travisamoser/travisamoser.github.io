@@ -84,7 +84,11 @@ footer {
       min-width: calc(50% + 20px);
 
       > div {
-        max-width: 310px;
+        max-width: 330px;
+        
+        > img {
+          max-width: 300px;
+        }
       }
     }
 

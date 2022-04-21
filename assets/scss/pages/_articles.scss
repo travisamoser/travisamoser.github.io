@@ -81,24 +81,24 @@
     text-align: center;
     min-width: 40px;
     font-weight: 900;
-    color: $color__royal-blue;
+    color: $color__fun-blue;
     background: transparent none;
     cursor: pointer;
 
     &:hover,
     &:active {
       text-decoration: underline;
-      color: $color__bahama-blue;
+      color: $color__logo-blue;
     }
 
     &[disabled] {
-      color: $color_text;
+      color: $color__text;
       cursor: default;
 
       &:hover,
       &:active {
         text-decoration: none;
-        color: $color_text;
+        color: $color__text;
       }
     }
 
