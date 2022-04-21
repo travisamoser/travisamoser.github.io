@@ -147,13 +147,73 @@ Array.prototype.forEach.call(navItemDropdowns, function(el, i){
 //
 if (document.getElementById('category-select-form')) {
 
-  document.getElementById('category-select').addEventListener('change', function (e) {
-    var el = e.target;
-    var category = el.value;
+  function getMatchingArticles(category) {
+    return category === '' ? document.getElementsByClassName('article-col') : document.querySelectorAll('.article-col[data-category="' + category + '"]');
+  }
 
+  function getNumMatchingPages(matchingArticles) {
+    return Math.ceil(matchingArticles.length / 9);
+  }
+
+  function buildPagination(pagination, numMatchingPages, category, matchingArticles) {
+    pagination.innerHTML = '';
+
+    if (numMatchingPages > 1) {
+      // build pagination if more than one page
+      for (var i = 1; i <= numMatchingPages; i++) {
+        if (currPage == i) {
+          pagination.insertAdjacentHTML('beforeend', '<button data-page="' + i + '" disabled>' + i + '</button> ');
+        } else {
+          pagination.insertAdjacentHTML('beforeend', '<button data-page="' + i + '">' + i + '</button> ');
+        }
+      }
+      // attach paging events to buttons
+      Array.prototype.forEach.call(document.querySelectorAll('#pagination button:not(:disabled)'), function(el, i) {
+        el.addEventListener('click', function (e) {
+          currPage = el.getAttribute('data-page');
+          showMatchingArticles(category);
+          paginateArticles(matchingArticles);
+          buildPagination(pagination, numMatchingPages, category, matchingArticles);
+          window.scroll({top: 0, behavior: "smooth"});
+        }, false);
+      });
+    } else {
+      pagination.innerHTML = '&nbsp;';
+    }
+  }
+
+  function paginateArticles(matchingArticles) {
+    Array.prototype.forEach.call(matchingArticles, function(el, i) {
+      (i < ((currPage - 1) * 9) || i > (currPage * 9 - 1)) && (el.style.display = 'none');
+    });
+  }
+
+  function showMatchingArticles(category) {
     Array.prototype.forEach.call(document.getElementsByClassName('article-col'), function(el, i) {
       category === '' || elMatches(el, '[data-category="'+ category + '"]') ? el.style.display = 'flex' : el.style.display = 'none';
     });
+  }
+
+  var pagination = document.getElementById('pagination');
+  var categorySelect = document.getElementById('category-select');
+  var category = categorySelect.value || '';
+  var matchingArticles = getMatchingArticles(category);
+  var numMatchingPages =getNumMatchingPages(matchingArticles);
+  var currPage = 1;
+
+  showMatchingArticles(category);
+  paginateArticles(matchingArticles);
+  buildPagination(pagination, numMatchingPages, category, matchingArticles);
+
+  document.getElementById('category-select').addEventListener('change', function (e) {
+    category = e.target.value || '';
+    matchingArticles = getMatchingArticles(category);
+    numMatchingPages = getNumMatchingPages(matchingArticles);
+    currPage = 1;
+
+    showMatchingArticles(category)
+    paginateArticles(matchingArticles);
+    buildPagination(pagination, numMatchingPages, category, matchingArticles);
   }, false);
 }
 
@@ -166,14 +226,12 @@ function collapseAccordionItem(item) {
   item.classList.add('collapsed');
   item.querySelector('.accordion-button').setAttribute('aria-expanded', 'false');
   slideUp(item.querySelector('.accordion-collapse'), 300);
-  // item.querySelector('.accordion-collapse').style.display = 'none';
 }
 
 function openAccordionItem(item) {
   item.classList.remove('collapsed');
   item.querySelector('.accordion-button').setAttribute('aria-expanded', 'true');
   slideDown(item.querySelector('.accordion-collapse'), 300);
-  // item.querySelector('.accordion-collapse').style.display = 'block';
 }
 
 function collapseAccordionItems(items) {

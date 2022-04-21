@@ -73,12 +73,34 @@
   text-decoration: none;
   text-align: center;
 
-  > .current,
-  > a {
+  button {
+    appearance: none;
     display: inline-block;
     padding: 8px 0;
+    border: 0 none;
     text-align: center;
     min-width: 40px;
+    font-weight: 900;
+    color: $color__royal-blue;
+    background: transparent none;
+    cursor: pointer;
+
+    &:hover,
+    &:active {
+      text-decoration: underline;
+      color: $color__bahama-blue;
+    }
+
+    &[disabled] {
+      color: $color_text;
+      cursor: default;
+
+      &:hover,
+      &:active {
+        text-decoration: none;
+        color: $color_text;
+      }
+    }
 
     @include mq__min-desktop {
       min-width: 0;
