@@ -45,10 +45,10 @@
   @include mq__max-tablet {
     position: absolute;
     width: 100vw;
-    height: calc(100vh - #{$mobile-header-height});
+    min-height: calc(100vh - #{$mobile-header-height});
     left: 0;
     top: #{$mobile-header-height};
-    padding: 26px 36px;
+    padding: 26px 36px 80px;
     overflow: auto;
     background-color: mix(white, $color__manatee, 90%);
     transform: translateX(-100%);
