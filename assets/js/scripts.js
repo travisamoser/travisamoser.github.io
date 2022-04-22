@@ -101,7 +101,25 @@ var slideToggle = function(target, duration) {
 // Mobile Navigation
 //
 document.getElementById('nav-toggle').addEventListener('click', function () {
-  document.body.classList.toggle('nav-open');
+  // https://css-tricks.com/prevent-page-scrolling-when-a-modal-is-open/
+  // prevent scrolling when mobile menu is open and
+  // return page to the same scroll position when menu is closed
+  // while avoiding a "jump" during opening/closing transition
+  var scrollY = document.body.style.top;
+  
+  if (document.body.classList.contains('nav-open')) {
+    document.body.style.position = '';
+    document.body.style.maxWidth = '';
+    document.body.style.top = '';
+    window.scrollTo(0, parseInt(scrollY || '0') * -1);
+    document.body.classList.remove('nav-open');
+  } else {
+    scrollY = window.scrollY;
+    document.body.style.position = 'fixed';
+    document.body.style.maxWidth = '100%';
+    document.body.style.top = '-' + scrollY + 'px';
+    document.body.classList.add('nav-open');
+  }
 }, false);
 
 //-----------------------------------------------------------------------------

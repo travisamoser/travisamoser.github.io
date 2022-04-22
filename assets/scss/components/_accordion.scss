@@ -25,6 +25,9 @@
 }
 
 .accordion-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   position: relative;
   display: block;
   width: 100%;
