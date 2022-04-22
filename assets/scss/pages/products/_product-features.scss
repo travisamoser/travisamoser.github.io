@@ -79,9 +79,9 @@
 }
 
 @include mq__min-desktop {
-  padding-bottom: 60px;
 
   .product-features {
+    padding-bottom: 60px;
 
     &::before {
       top: var(--container-bg_y-offset-desktop);

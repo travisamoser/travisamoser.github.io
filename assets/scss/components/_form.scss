@@ -16,6 +16,7 @@
     line-height: 1;
     color: $color__scorpion;
     transform-origin: top left;
+    transition: transform 0.3s ease-in-out;
   }
 
   input[type='text'],
@@ -44,7 +45,7 @@
 
     &.dirty + label,
     &:focus + label {
-      transform: scale(56%) translateY(-18px);
+      transform: scale(0.56) translateY(-18px);
     }
   }
 

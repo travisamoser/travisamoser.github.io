@@ -63,6 +63,13 @@
   background-repeat: no-repeat;
   background-color: rgba($color__manatee, 0.05);
 
+  option { // stupid Firefox
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: mix(white, $color__manatee, 95%);
+  }
+
   @include mq__min-tablet {
     width: 333px;
   }

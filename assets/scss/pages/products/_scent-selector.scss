@@ -73,6 +73,13 @@
     background-color: rgba($color__manatee, 0.05);
   }
 
+  option { // stupid Firefox
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: mix(white, $color__manatee, 95%);
+  }
+
   .scent-features {
     margin: 20px 0 26px;
     color: $color__stratos;

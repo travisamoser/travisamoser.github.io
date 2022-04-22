@@ -142,7 +142,7 @@ Array.prototype.forEach.call(navItemDropdowns, function(el, i){
 });
 
 //-----------------------------------------------------------------------------
-// Articles Category Select
+// Articles Category Select and Paging
 //
 if (document.getElementById('category-select-form')) {
 
