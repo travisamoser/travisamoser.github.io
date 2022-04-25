@@ -454,7 +454,8 @@ window.addEventListener('load', function(){
       autoplay: true,
       autoplayButtonOutput: false,
       controls: false,
-      navPosition: 'bottom'
+      navPosition: 'bottom',
+      lazyload: true
     });  
   }
 

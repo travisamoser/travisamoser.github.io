@@ -4,6 +4,11 @@
 
 .hero-banner {
 
+  @include mq__min-desktop {
+    height: 684px;
+    overflow: hidden;
+  }
+
   [class^="hero-scent_"] {
     width: 100%;
     padding-top: 320px;
@@ -53,8 +58,9 @@
       right: 0;
       left: 0;
       top: -381.33px;
-      max-height: 381.33px;
+      width: auto;
       height: auto;
+      max-height: 381.33px;
       margin: 0 auto;
     }
 
