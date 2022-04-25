@@ -31,7 +31,7 @@
 .article-headline {
   margin: 0;
   font-size: 24px;
-  transition: color 0.3s ease-in-out;
+  transition: color $transition__duration $transition__timing-function;
 
   .card > a:hover & {
     color: $color__fun-blue;

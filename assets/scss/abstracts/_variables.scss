@@ -93,3 +93,7 @@ $font__nunito-sans: 'Nunito Sans', Arial, 'Helvetica Neue', Helvetica, sans-seri
 $mobile-header-height: 68px;
 $desktop-header-height: 147px;
 $desktop-sticky-header-height: 67px;
+
+// transitions
+$transition__duration: 0.3s;
+$transition__timing-function: ease-in-out;

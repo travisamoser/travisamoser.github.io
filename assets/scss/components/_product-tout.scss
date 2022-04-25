@@ -38,7 +38,7 @@
     width: 100%;
     height: auto;
     margin: auto;
-    transition: transform 0.3s ease-in-out;
+    transition: transform $transition__duration $transition__timing-function;
   }
 
   .icon {

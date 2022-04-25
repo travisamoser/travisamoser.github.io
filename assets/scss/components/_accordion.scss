@@ -52,7 +52,7 @@
     margin: auto 0;
     background: $color__fun-blue; 
     transform-origin: center;
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity $transition__duration $transition__timing-function;
   }
 
   &::after {

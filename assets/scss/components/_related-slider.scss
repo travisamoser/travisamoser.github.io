@@ -78,10 +78,10 @@
     }
 
     @include mq__min-desktop {
-      transition: all 0.3s ease-in-out;
+      transition: all $transition__duration $transition__timing-function;
 
       h3 {
-        transition: color 0.3s ease-in-out;
+        transition: color $transition__duration $transition__timing-function;
       }
 
       &:hover,

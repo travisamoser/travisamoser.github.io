@@ -36,7 +36,7 @@
     height: auto;
     margin: auto;
     border-radius: 8px 8px 0 0;
-    transition: transform 0.3s ease-in-out;
+    transition: transform $transition__duration $transition__timing-function;
 
     .card > a:hover & {
       transform: scale(1.1);

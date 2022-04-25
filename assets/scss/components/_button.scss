@@ -15,7 +15,7 @@
   color: white;
   background: $color__fun-blue;
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.16);
-  transition: all 0.3s ease-in-out;
+  transition: all $transition__duration $transition__timing-function;
 
   &:hover {
     text-decoration: none;
@@ -58,7 +58,7 @@
     color: $color__fun-blue;
     background: none;
     box-shadow: none;
-    transition: color 0.3s ease-in-out;
+    transition: color $transition__duration $transition__timing-function;
 
     svg {
       position: relative;
@@ -66,7 +66,7 @@
       width: 12px;
       height: 8px;
       fill: currentColor;
-      transition: all 0.3s ease-in-out;
+      transition: all $transition__duration $transition__timing-function;
     }
 
     &:hover {
