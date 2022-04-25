@@ -98,6 +98,11 @@ var slideToggle = function(target, duration) {
 }
 
 //-----------------------------------------------------------------------------
+// Hello JS
+//
+document.getElementsByTagName('body')[0].classList.remove('no-js');
+
+//-----------------------------------------------------------------------------
 // Mobile Navigation
 //
 document.getElementById('nav-toggle').addEventListener('click', function () {
