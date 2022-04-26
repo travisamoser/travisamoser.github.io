@@ -5,13 +5,13 @@
   &::before {
     content: '';
     position: absolute;
-    top: var(--container-bg_y-offset-mobile);
-    left: var(--container-bg_x-offset-mobile);
+    top: var(--container-bg_y-offset);
+    left: var(--container-bg_x-offset);
     z-index: -1;
     display:  block;
-    width: var(--bg_width-mobile);
-    height: var(--bg_height-mobile);
-    background-position: top var(--bg_y-offset-mobile) right var(--bg_x-offset-mobile);
+    width: var(--bg_width);
+    height: var(--bg_height);
+    background-position: top var(--bg_y-offset) right var(--bg_x-offset);
     background-size: auto 100%;
     background-repeat: no-repeat;
     background-image: var(--bg_image);
@@ -36,21 +36,9 @@
   text-align: center;
   background-color: var(--scent-color-bg);
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: calc(var(--container-bg_y-offset-mobile) + -65px);
-    left: var(--container-bg_x-offset-mobile);
-    z-index: -1;
-    display:  block;
-    width: 100%;
-    height: var(--bg_height-mobile);
-    background-position: top var(--bg_y-offset-mobile) right calc(var(--bg_x-offset-mobile) +  -21px);
-    background-size: auto 100%;
-    background-repeat: no-repeat;
-    background-image: var(--bg_image);
-    filter: blur(3px) brightness(1.2);
-    opacity: 0.5;
+  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(2px) brightness(1.1);
   }
 
   > * {
@@ -70,25 +58,17 @@
   }
 }
 
-.col:nth-child(2) .product-feature,
-.col:nth-child(3) .product-feature {
-
-  &::before {
-    content: none;
-  }
-}
-
 @include mq__min-desktop {
 
   .product-features {
     padding-bottom: 60px;
 
     &::before {
-      top: var(--container-bg_y-offset-desktop);
-      left: var(--container-bg_x-offset-desktop);
-      width: var(--bg_width-desktop);
-      height: var(--bg_height-desktop);
-      background-position: top right var(--bg_x-offset-desktop);
+      top: var(--container-bg_y-offset);
+      left: var(--container-bg_x-offset);
+      width: var(--bg_width);
+      height: var(--bg_height);
+      background-position: top right var(--bg_x-offset);
     }
   
     .row {
@@ -106,100 +86,5 @@
 
   .product-feature {
     height: 100%;
-  }
-
-  .col:nth-child(1) .product-feature,
-  .col:nth-child(2) .product-feature,
-  .col:nth-child(3) .product-feature {
-
-    &::before {
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 100%;
-      background-size: auto var(--bg_height-desktop);
-    }
-  }
-
-  .col:nth-child(2) .product-feature,
-  .col:nth-child(3) .product-feature {
-  
-    &::before {
-      content: '';
-    }
-  }
-
-  .col {
-    // 1 product feature
-    &:first-child:nth-last-child(1) .product-feature::before {
-      background-position: top calc(var(--bg_y-offset-desktop) + -66px) right calc(-2.1vw + var(--bg_x-offset-desktop));
-    }
-  
-    // 2 product features
-    &:first-child:nth-last-child(2) {
-
-      .product-feature::before {
-        background-position: top calc(var(--bg_y-offset-desktop) + -66px) right calc(-50.1vw + var(--bg_x-offset-desktop));
-      }
-
-      ~ .col:nth-child(2) .product-feature::before {
-        background-position: top calc(var(--bg_y-offset-desktop) + -66px) right calc(-2.1vw + var(--bg_x-offset-desktop));
-      }
-    }
-
-    // 3 product features
-    &:first-child:nth-last-child(3) {
-
-      .product-feature::before {
-        background-position: top calc(var(--bg_y-offset-desktop) + -66px) right calc(-66.1vw + var(--bg_x-offset-desktop));
-      }
-
-      ~ .col:nth-child(2) .product-feature::before {
-        background-position: top calc(var(--bg_y-offset-desktop) + -66px) right calc(-34.1vw + var(--bg_x-offset-desktop));
-      }
-
-      ~ .col:nth-child(3) .product-feature::before {
-        background-position: top calc(var(--bg_y-offset-desktop) + -66px) right calc(-2.1vw + var(--bg_x-offset-desktop));
-      }
-    }
-  }
-}
-
-@media screen and (min-width:1128px) {
-  
-  .col {
-
-    // 1 product feature
-    &:first-child:nth-last-child(1) .product-feature::before {
-      background-position: top calc(var(--bg_y-offset-desktop) + -66px) right calc(2px - 14px - ((100vw - 1128px) / 2) + var(--bg_x-offset-desktop));
-    }
-
-    // 2 product features
-    &:first-child:nth-last-child(2) {
-  
-      .product-feature::before {
-        background-position: top calc(var(--bg_y-offset-desktop) + -66px) right calc(-550px - 14px - ((100vw - 1128px) / 2) + var(--bg_x-offset-desktop));
-      }      
-
-      ~ .col:nth-child(2) .product-feature::before {
-        background-position: top calc(var(--bg_y-offset-desktop) + -66px) right calc(2px - 14px - ((100vw - 1128px) / 2) + var(--bg_x-offset-desktop));
-      }
-    }
-
-    // 3 product features
-    &:first-child:nth-last-child(3) {
-  
-      .product-feature::before {
-        background-position: top calc(var(--bg_y-offset-desktop) + -66px) right calc(-734px - 14px - ((100vw - 1128px) / 2) + var(--bg_x-offset-desktop));
-      }      
-
-      ~ .col:nth-child(2) .product-feature::before {
-        background-position: top calc(var(--bg_y-offset-desktop) + -66px) right calc(-367px - 14px - ((100vw - 1128px) / 2) + var(--bg_x-offset-desktop));
-      }
-
-      ~ .col:nth-child(3) .product-feature::before {
-        background-position: top calc(var(--bg_y-offset-desktop) + -66px) right calc(2px - 14px - ((100vw - 1128px) / 2) + var(--bg_x-offset-desktop));
-      }
-    }
   }
 }
