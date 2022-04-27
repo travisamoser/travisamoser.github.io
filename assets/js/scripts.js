@@ -391,7 +391,11 @@ window.addEventListener('load', function(){
       var productGalleryThumbs = document.querySelectorAll('.product-gallery-thumbs > img');
 
       Array.prototype.forEach.call(productGalleryImages, function(el, i){
-        el.src = imgLocation + imgSrcs[i];
+        el.src = imgLocation + imgSrcs[i] + '?w=450';
+        el.setAttribute('data-zoom', imgLocation + imgSrcs[i] + '?w=900');
+        new Drift(el, {
+          paneContainer: document.querySelector('div.product-gallery')
+        });
       });
 
       Array.prototype.forEach.call(productGalleryThumbs, function(el, i){

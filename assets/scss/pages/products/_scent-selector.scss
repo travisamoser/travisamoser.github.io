@@ -3,7 +3,7 @@
 
   .product-gallery {
     
-    img {
+    .product-gallery-slider img {
       max-width: 100%;
       height: auto;
     }
@@ -93,6 +93,11 @@
       display: block;
       margin-right: 17px;
     }
+  }
+
+  .drift-zoom-pane {
+    border: 1px solid var(--scent-color-border);
+    border-radius: 2px;
   }
 
   @include mq__min-desktop {
