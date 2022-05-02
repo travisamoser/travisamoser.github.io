@@ -1,0 +1,176 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the article template.
+// -----------------------------------------------------------------------------
+
+.page-article {
+
+  .hero {
+    position: relative;
+    max-width: 1088px;
+    height: 280px;
+    margin: 0 auto;
+    overflow: hidden;
+    background: rgba($color__lavender_bag,0.25) url(../img/related-products/bg.svg) top 30px center / 200px auto repeat;
+
+    img {
+      position: absolute;
+      display: block;
+      width: auto;
+      height: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      // &.align-right-mobile {
+      //   left: calc((900px - 100vw) * -1);
+      // }
+
+      // &.align-left-mobile {
+      //   right: calc((900px - 100vw) * -1);
+      
+      // }
+
+      // &.align-center-mobile {
+      //   left: 0;
+      //   right: 0;
+      //   margin: auto;
+      // }
+
+      // @media screen and (min-width:900px) {
+
+      //   &.align-right-mobile {
+      //     left: auto;
+      //   }
+  
+      //   &.align-left-mobile {
+      //     right: auto;
+      //   }
+      // }
+
+      @media screen and (min-width:1088px) {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+.article-content {
+
+  > .container {
+    padding: 0 20px;
+  }
+
+  @include mq__min-desktop {
+
+    > .container {
+      max-width: 904px;
+      padding: 0;
+      margin: 0 auto;
+    }
+  
+    .cs-row {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+.article-headline {
+  margin-bottom: 35px;
+}
+
+.article-body {
+  flex: 0 0 628 / 904 * 100%;
+  margin-bottom: 55px;
+
+  .meta {
+    margin-bottom: 20px;
+
+    span {
+      display: inline-block;
+      padding: 0 10px;
+      border-left: 1px solid $color__stratos;
+
+      &:first-child {
+        padding-left: 0;
+        border-left: 0 none;
+      }
+    }
+  }
+
+  .container {
+    margin-bottom: 1em;
+  }
+
+  .row {
+    margin-right: calc(-1 * var(--bs-gutter-x));
+    margin-left: calc(-1 * var(--bs-gutter-x));
+  }
+
+  [class^='col-'] {
+    text-align: center;
+
+    img {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @include mq__min-tablet {
+      text-align: left;
+
+      img {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    max-height: 378px;
+    height: auto;
+    margin-bottom: 1em;
+
+    @include mq__min-tablet {
+
+      &[class*='img-'] {
+        max-width: 300px;
+        clear: both;
+      }
+
+      &.img-center {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      &.img-left {
+        margin-right: auto;
+      }
+  
+      &.img-right {
+        margin-left: auto;
+      }
+
+      &.img-float-left {
+        float: left;
+        margin-right: 1em;
+      }
+  
+      &.img-float-right {
+        float: right;
+        margin-left: 1em;
+      }
+    }
+  }
+}
+
+.article-sidebar {
+  flex: 0 0 219 / 904 * 100%;
+  margin-bottom: 55px;
+
+  > h5 {
+    margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,19 @@
+.section-gray {
+  background: rgba($color__lavender_bag,0.1) url(../img/related-products/bg.svg) top 30px center / 200px auto repeat;
+}
+
+.items-start {
+  align-items: flex-start !important;
+}
+.items-end {
+  align-items: flex-end !important;
+}
+.items-center {
+  align-items: center !important;
+}
+.items-baseline {
+  align-items: baseline !important;
+}
+.items-stretch {
+  align-items: stretch !important;
+}

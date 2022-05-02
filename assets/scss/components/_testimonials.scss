@@ -1,0 +1,88 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles for the testimonials section.
+// -----------------------------------------------------------------------------
+
+.testimonials-section {
+  padding: 75px 0 40px;
+  text-align: center;
+  color: white;
+  background: $color__fun-blue;
+
+  > .container {
+    max-width: 1025px;
+    padding: 0 20px;
+    margin: 0 auto;
+  }
+
+  h3 {
+    margin: 1em auto;
+    font-weight: 400;
+    color: white;
+  }
+
+  @include mq__min-desktop {
+
+    > .container {
+      position: relative;
+      padding: 0 40px;
+    }
+  
+    h3 {
+      max-width: 720px;
+      font-size: 30px;
+    }
+  }
+
+  .tns-nav {
+
+    button {
+      &::before {
+        background: rgba(white,0.28);
+      }
+  
+      &.tns-nav-active::before {
+        background: white;
+      }
+    }
+  
+    @include mq__min-desktop {
+      display: inline-block;
+    }
+  }
+}
+
+.tns-controls {
+  display: none;
+
+  @include mq__min-desktop {
+    display: block;
+  }
+
+  button {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    height: 40px;
+    padding: 40px 40px 0 0;
+    border: 0 none;
+    border-radius: 0;
+    margin: auto 0;
+    overflow: hidden;
+    background: transparent url(../img/about/arrow-next.svg) no-repeat center;
+    appearance: none;
+
+    &[data-controls="prev"] {
+      left: 0;
+      transform: rotate(180deg);
+    }
+
+    &[data-controls="next"] {
+      right: 0;
+    }
+
+    &[disabled] {
+      opacity: 0.5;
+    }
+  }
+}

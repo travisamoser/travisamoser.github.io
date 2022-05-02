@@ -1,0 +1,107 @@
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+.text-center {
+  text-align: center !important;
+}
+.text-right {
+  text-align: right !important;
+}
+.text-justify {
+  text-align: justify !important;
+}
+
+.text-xs {
+  font-size: .75em !important; // 12px
+}
+.text-sm {
+  font-size: .875em !important; // 14px
+}
+.text-base {
+  font-size: 1rem !important; // 16px
+}
+.text-lg {
+  font-size: 1.125rem !important; // 18px
+}
+.text-xl {
+  font-size: 1.25rem !important; // 20px
+}
+.text-2xl {
+  font-size: 1.5rem !important; // 24px
+}
+
+.font-light {
+  font-weight: 300 !important;
+}
+.font-normal {
+  font-weight: 400 !important;
+}
+.font-semibold {
+  font-weight: 600 !important;
+}
+.font-bold {
+  font-weight: 700 !important;
+}
+.font-black {
+  font-weight: 900 !important;
+}
+
+.uppercase {
+  text-transform: uppercase !important;
+}
+.lowercase {
+  text-transform: lowercase !important;
+}
+.capitalize {
+  text-transform: capitalize !important;
+}
+.normal-case {
+  text-transform: none !important;
+}
+
+.columns-2 {
+  columns: 2 !important;
+}
+
+.float-right {
+  float: right !important;
+}
+.float-left {
+  float: left !important;
+}
+.float-none {
+  float: none !important;
+}
+
+.clear-left {
+  clear: left !important;
+}
+.clear-right {
+  clear: right !important;
+}
+.clear-both {
+  clear: both !important;
+}
+.clear-none {
+  clear: none !important;
+}
+
+.whitespace-normal {
+  white-space: normal !important;
+}
+.whitespace-nowrap {
+  white-space: nowrap !important;
+}
+.whitespace-pre {
+  white-space: pre !important;
+}
+.whitespace-pre-line {
+  white-space: pre-line !important;
+}
+.whitespace-pre-wrap {
+  white-space: pre-wrap !important;
+}

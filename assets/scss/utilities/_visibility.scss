@@ -1,0 +1,30 @@
+@include mq__max-phone {
+  .hide__mobile {
+    display: none !important;
+  }
+}
+@include mq__max-tablet {
+  .hide__mobile-tablet {
+    display: none !important;
+  }
+}
+@include mq__min-tablet {
+  .hide__tablet-desktop {
+    display: none !important;
+  }
+}
+@include mq__min-desktop {
+  .hide__desktop {
+    display: none !important;
+  }
+}
+
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; 
+  width: 1px;
+}

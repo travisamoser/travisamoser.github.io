@@ -1,0 +1,52 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the contact us page.
+// -----------------------------------------------------------------------------
+
+.page-contact {
+  background: mix(white, $color__manatee, 90%) url(../img/bg.jpg) no-repeat left -325px top -560px;
+
+  @include mq__min-desktop {
+    background-position: center -492px;
+  }
+
+  @media screen and (min-width:1670px) {
+    background-position: center -32vw;
+    background-size: 100% auto;
+  }
+
+  main > .container {
+    max-width: 1088px;
+    margin: 0 auto;
+    padding: 150px 20px 50px;
+  }
+
+  .hero {
+    margin-bottom: 30px;
+  }
+
+  @include mq__min-desktop {
+    .hero h1 {
+      margin-top: 0;
+      margin-bottom: 30px;
+    }
+
+    .layout__2-col {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 100px;
+    }
+
+    .hero {
+      flex: 0 0 418 / 1088 * 100%;
+      margin: 0;
+    }
+
+    .form {
+      flex: 0 0 552 / 1088 * 100%;
+    }
+
+    .form-confirmation > *:first-child {
+      margin-top: 0;
+    }
+  }
+}

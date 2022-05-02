@@ -1,0 +1,128 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+
+footer {
+  position: relative;
+  text-align: center;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -31px;
+    display: block;
+    width: 100%;
+    height: 31px;
+    background: url('../img/footer/shadow.png') no-repeat center;
+  }
+
+  .top {
+    padding: 45px 15px 60px;
+    background: white;
+  }
+
+  .trademark {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    font-size: 10px;
+    color: $color__dove-gray;
+  }
+
+  .link-social {
+    display: inline-block;
+    padding: 5px 5px 0;
+    margin-bottom: 20px;
+  }
+
+  .links {
+    margin-top: 20px;
+
+    a {
+      margin: 0 5px;
+    }
+  }
+
+  .bottom {
+    padding: 25px 15px 40px;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+    background: $color__stratos;
+    
+    .container > img {
+      width: 165px;
+      height: auto;
+    }
+
+    a {
+      color: white;
+    }
+  }
+
+  .terms-privacy {
+    margin-top: 10px;
+  }
+
+  @include mq__min-desktop {
+    text-align: left;
+
+    .container {
+      max-width: 1088px;
+      margin: 0 auto;
+    }
+
+    .top > .container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .trademark {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+      min-width: calc(50% + 20px);
+
+      > div {
+        max-width: 330px;
+        
+        > img {
+          max-width: 300px;
+        }
+      }
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      
+      > a {
+        margin-bottom: 10px;
+      }
+    }
+
+    .bottom {
+      padding: 0 15px 0 0;
+
+      > .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    .copyright {
+      display: flex;
+    }
+
+    .terms-privacy {
+      margin: 0 0 0 20px;
+
+      a {
+        display: inline-block;
+        margin: 0 5px;
+      }
+    }
+  }
+}

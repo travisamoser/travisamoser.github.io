@@ -1,0 +1,152 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+
+header {
+  background: white;
+
+  > .container {
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 1;
+      display: block;
+      width: 100%;
+      height: 42px;
+      background: transparent no-repeat url(../img/navigation/bg-navigation.png) center top;
+    }
+  }
+
+  @include mq__max-tablet {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+
+    > .container {
+      padding: 22px 14px 20px;
+    }
+
+    .logo-link {
+
+      > img {
+        height: 19px;
+        width: auto;
+      }
+    }
+
+    .hamburger {
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 21px;
+      width: 25px;
+      height: 3px;
+      padding: 0;
+      border: 0 none;
+      border-radius: 2px;
+      margin: auto 0;
+      background: rgba($color__fun-blue, 1);
+      appearance: none;
+      -webkit-appearance: none;
+      transform-origin: center;
+      transition: background-color $transition__duration $transition__timing-function;
+
+      &::before,
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 2px;
+        background: $color__fun-blue;
+        transition: transform $transition__duration $transition__timing-function;
+      }
+
+      &::before {
+        transform: translateY(-8px);
+      }
+
+      &::after {
+        transform: translateY(8px);
+      }
+    }
+  }
+
+  @include mq__min-desktop {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+
+    > .container {
+      position: relative;
+      z-index: 100;
+      max-width: 1088px;
+      margin: 0 auto;
+    }
+
+    .logo-link {
+      position: absolute;
+      bottom: 0; 
+      left: 0;
+      right: 0;
+      z-index: 200;
+      display: block;
+      width: 125px;
+      height: auto;
+      margin: 0 auto;
+      transform: translate(0, 44px);
+      transition: transform $transition__duration $transition__timing-function;
+
+      @at-root .dropdown-visible & {
+        z-index: 100;
+      }
+
+      img {
+        max-width: 100%;
+      }
+    }
+
+    .hamburger {
+      display: none;
+    }
+
+    &.sticky {
+
+      .logo-link {
+        transform: translate(0, 62px) scale(57%);
+      }
+    }
+  }
+}
+
+@include mq__max-tablet {
+  
+  body.nav-open {
+
+    header {
+
+      .hamburger {
+        background-color: rgba($color__royal-blue, 0);
+
+        &::before {
+          transform: rotate(45deg);
+        }
+
+        &::after {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+}

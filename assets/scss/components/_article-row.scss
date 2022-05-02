@@ -1,0 +1,48 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the article row component.
+// -----------------------------------------------------------------------------
+
+
+.article-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  margin: 0 -22px 100px;
+}
+
+.article-col {
+  display: flex;
+  align-items: stretch;
+  padding: 0 22px;
+
+  @include mq__min-tablet {
+    width: 50%;
+  }
+
+  @include mq__min-desktop {
+    width: 33.33%;
+  }
+}
+
+.article.card {
+  width: 100%;
+  margin-bottom: 48px;
+}
+
+.article-headline {
+  margin: 0;
+  font-size: 24px;
+  transition: color $transition__duration $transition__timing-function;
+
+  .card > a:hover & {
+    color: $color__fun-blue;
+  }
+}
+
+.article-category {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: $color__comet;
+}

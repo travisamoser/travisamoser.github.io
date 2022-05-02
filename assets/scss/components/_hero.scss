@@ -1,0 +1,20 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the hero component.
+// -----------------------------------------------------------------------------
+
+.hero-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 507px;
+  padding: 0 30px;
+  text-align: center;
+  background: $color__mine-shaft no-repeat center / cover;
+
+  h1 {
+    max-width: 740px;
+    margin: 0;
+    color: white;
+    text-shadow: 0 0 rgba(0, 0, 0, 0.2);
+  }
+}
