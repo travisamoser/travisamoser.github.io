@@ -1,2 +1,3 @@
 User-agent: *
 Disallow:
+Sitemap: https://mycolorscents.com/sitemap.xml
