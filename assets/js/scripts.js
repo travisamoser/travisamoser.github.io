@@ -226,9 +226,11 @@ if (document.getElementById('category-select-form')) {
     });
   }
 
+  var url = new URL(location.href);
   var pagination = document.getElementById('pagination');
   var categorySelect = document.getElementById('category-select');
-  var category = categorySelect.value || '';
+  var category = getParameterByName('category').toLowerCase() || categorySelect.value || '';
+  category && (categorySelect.value = category);
   var matchingArticles = getMatchingArticles(category);
   var numMatchingPages =getNumMatchingPages(matchingArticles);
   var currPage = 1;
@@ -236,6 +238,8 @@ if (document.getElementById('category-select-form')) {
   showMatchingArticles(category);
   paginateArticles(matchingArticles);
   buildPagination(pagination, numMatchingPages, category, matchingArticles);
+  url.searchParams.set('category', category);
+  history.replaceState(null, '', url);
 
   document.getElementById('category-select').addEventListener('change', function (e) {
     category = e.target.value || '';
@@ -246,6 +250,8 @@ if (document.getElementById('category-select-form')) {
     showMatchingArticles(category)
     paginateArticles(matchingArticles);
     buildPagination(pagination, numMatchingPages, category, matchingArticles);
+    url.searchParams.set('category', category);
+    history.replaceState(null, '', url);
   }, false);
 }
 
@@ -319,7 +325,8 @@ window.addEventListener('load', function(){
 
   if (document.getElementById('scent') && document.querySelector('.product-gallery-slider')) {
 
-    var scent = getParameterByName('scent');
+    var url = new URL(location.href);
+    var scent = getParameterByName('scent').toLowerCase();
     var scentSelect = document.getElementById('scent');
     scent && (scentSelect.value = scent);
     var size = document.body.getAttribute('data-size');
@@ -481,12 +488,13 @@ window.addEventListener('load', function(){
 
     document.body.setAttribute('data-scent', scentSelect.value);
     initGallerySlider(size, scentSelect.value, productImages);
+    url.searchParams.set('scent', scentSelect.value);
+    history.replaceState(null, '', url);
     psButtonsInit(size, scentSelect.value, psButtons);
 
     scentSelect.addEventListener('change', function (e) {
       document.body.setAttribute('data-scent', e.target.value);
       rebuildGallerySliderScent(size, e.target.value, productImages);
-      var url = new URL(location.href);
       url.searchParams.set('scent', e.target.value);
       history.replaceState(null, '', url);
       psButtonsInit(size, scentSelect.value, psButtons);

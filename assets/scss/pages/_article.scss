@@ -21,31 +21,20 @@
       left: 50%;
       transform: translate(-50%, -50%);
 
-      // &.align-right-mobile {
-      //   left: calc((900px - 100vw) * -1);
-      // }
-
-      // &.align-left-mobile {
-      //   right: calc((900px - 100vw) * -1);
-      
-      // }
-
-      // &.align-center-mobile {
-      //   left: 0;
-      //   right: 0;
-      //   margin: auto;
-      // }
-
-      // @media screen and (min-width:900px) {
-
-      //   &.align-right-mobile {
-      //     left: auto;
-      //   }
-  
-      //   &.align-left-mobile {
-      //     right: auto;
-      //   }
-      // }
+      @include mq__max-tablet {
+        
+        &.align-right-mobile {
+          right: 0;
+          left: auto;
+          transform: translate(0%, -50%);
+        }
+        
+        &.align-left-mobile {
+          right: auto;
+          left: 0;
+          transform: translate(0%, -50%);
+        }
+      }
 
       @media screen and (min-width:1088px) {
         width: 100%;
@@ -156,6 +145,7 @@
       &.img-float-left {
         float: left;
         margin-right: 1em;
+
       }
   
       &.img-float-right {
@@ -163,6 +153,11 @@
         margin-left: 1em;
       }
     }
+  }
+
+  ul,
+  ol { // fix bullets/numbers overlapping left-floated images
+    overflow: hidden;
   }
 }
 

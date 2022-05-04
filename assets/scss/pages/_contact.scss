@@ -3,14 +3,10 @@
 // -----------------------------------------------------------------------------
 
 .page-contact {
-  background: mix(white, $color__manatee, 90%) url(../img/bg.jpg) no-repeat left -325px top -560px;
+  background: mix(white, $color__manatee, 90%) url(../img/contact/bg.jpg) no-repeat center 67px;
+  background-size: 960px auto;
 
   @include mq__min-desktop {
-    background-position: center -492px;
-  }
-
-  @media screen and (min-width:1670px) {
-    background-position: center -32vw;
     background-size: 100% auto;
   }
 

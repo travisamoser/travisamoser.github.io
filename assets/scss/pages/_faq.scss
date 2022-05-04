@@ -3,14 +3,14 @@
 // -----------------------------------------------------------------------------
 
 .page-faqs {
-  background: mix(white, $color__manatee, 90%) url(../img/bg.jpg) no-repeat left -325px top -560px;
+  background: mix(white, $color__manatee, 90%) url(../img/faq/bg.jpg) no-repeat -265px -195px;
+  background-size: 1482px auto;
 
   @include mq__min-desktop {
-    background-position: center -492px;
+    background-position: right 0 top 67px;
   }
 
-  @media screen and (min-width:1670px) {
-    background-position: center -32vw;
+  @media screen and (min-width:1482px) {
     background-size: 100% auto;
   }
 
