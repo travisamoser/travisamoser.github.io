@@ -123,7 +123,7 @@ if(isset($_POST['submitted']))
       <div class="layout__2-col">
         <div class="hero">
           <h1>Contact Us</h1>
-          <p>If there's anything you couldn't find on our site, our team is happt to help you. Please fill out the form below and a customer experience team member will be in touch!</p>
+          <p>If there's anything you couldn't find on our site, our team is happy to help you. Please fill out the form below and a customer experience team member will be in touch!</p>
         </div>
   
         <div class="form">
