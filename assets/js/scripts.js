@@ -229,7 +229,7 @@ if (document.getElementById('category-select-form')) {
   var url = new URL(location.href);
   var pagination = document.getElementById('pagination');
   var categorySelect = document.getElementById('category-select');
-  var category = getParameterByName('category').toLowerCase() || categorySelect.value || '';
+  var category = (getParameterByName('category') && getParameterByName('category').toLowerCase())  || categorySelect.value || '';
   category && (categorySelect.value = category);
   var matchingArticles = getMatchingArticles(category);
   var numMatchingPages =getNumMatchingPages(matchingArticles);
@@ -326,7 +326,7 @@ window.addEventListener('load', function(){
   if (document.getElementById('scent') && document.querySelector('.product-gallery-slider')) {
 
     var url = new URL(location.href);
-    var scent = getParameterByName('scent').toLowerCase();
+    var scent = getParameterByName('scent') && getParameterByName('scent').toLowerCase();
     var scentSelect = document.getElementById('scent');
     scent && (scentSelect.value = scent);
     var size = document.body.getAttribute('data-size');

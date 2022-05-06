@@ -213,8 +213,8 @@ if(isset($_POST['submitted']))
         <div class="copyright">
           <div>© 2022 Berry Global Group, Inc. All Rights Reserved.</div>
           <div class="terms-privacy">
-            <a href="/terms-conditions/">Terms &amp; Conditions</a>
-            <a href="/privacy/">Privacy</a>
+            <a href="https://www.berryglobal.com/en/legal/terms-of-use" rel="external" target="_blank">Terms of Use</a>
+            <a href="https://www.berryglobal.com/en/legal/privacy-notice" rel="external" target="_blank">Privacy</a>
           </div>
         </div>
       </div>
